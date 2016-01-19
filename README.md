@@ -24,8 +24,7 @@ Just follow this instructions: <http://stackoverflow.com/a/15641758>
 
 # Authors
 
-Felipe Schmidt    
-[Lucas Kreutz](http://lucaskreutz.com.br)   
+Lukaopc  
 
 # License
 
