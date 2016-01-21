@@ -528,7 +528,7 @@ void renderScene()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	//minimap rendering	
+	//minimap rendering
 	renderMinimap();
 
 	setViewport(0, windowWidth, 0, 480);
@@ -566,7 +566,7 @@ void renderMapAndTimer() {
 
 	// bombs timer
 	int nSeconds[5];
-	
+
 	for(int i = 0; i < 5; i++) {
 		nSeconds[i] = (int)goTimer[i].GetTimeSeconds();
 	}
@@ -629,7 +629,7 @@ void renderMinimap(){
 		renderMapAndTimer();
 		glPopMatrix();
 
-	}	
+	}
 }
 
 void cutSceneMinimap(float x, float y, float w, float h){
@@ -779,7 +779,7 @@ void updateState()
 	}
 
 	map.executeMachine();
-	
+
 	// check collisions with bombs
 	std::vector<std::shared_ptr<Machine>> enemies = map.enemies();
 	std::vector<std::shared_ptr<Machine>>::iterator enemiesIt;
@@ -927,7 +927,7 @@ void SpecialInput(int key, int x, int y) {
 			alSourcePlay(source[0]);
 		}
 		upPressed = true;
-		break;	
+		break;
 	case GLUT_KEY_DOWN:
 		downPressed = true;
 		break;
@@ -948,7 +948,7 @@ void SpecialInputUp(int key, int x, int y) {
 			alSourceStop(source[0]);
 		}
 		upPressed = false;
-		break;	
+		break;
 	case GLUT_KEY_DOWN:
 		downPressed = false;
 		break;
@@ -1018,7 +1018,7 @@ int main(int argc, char **argv)
 	glutKeyboardFunc(onKeyDown);
 	glutKeyboardUpFunc(onKeyUp);
 	glutSpecialFunc(SpecialInput);
-	glutSpecialUpFunc(SpecialInputUp); 
+	glutSpecialUpFunc(SpecialInputUp);
 
 	mainInit();
 
