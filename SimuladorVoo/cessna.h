@@ -35,7 +35,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <math.h>
-#include <GL/glut.h>
+#include <GL\glut.h>
 
 #include  "glm.h"
 #include  "vertices.h"
@@ -55,7 +55,7 @@ namespace nsCessna
 
 	void initSim(void)
 	{
-			printf("DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG\n");
+		/*	printf("DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG\n");
 			printf("Flight Simulator for Cessna Skyhawk\n");
 			printf("Tutorial\n");
 			printf("http://robgotschall.dhs.org/	\n");
@@ -77,7 +77,7 @@ namespace nsCessna
 			printf("Use the right and left mouse buttons to control the yaw of the plane.\n");
 			printf("To reset the plane to original position press the r key.\n");
 			printf("To quit press the q key.\n");
-
+	*/
 
 			//glutInit(&argc, argv);
 			glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);

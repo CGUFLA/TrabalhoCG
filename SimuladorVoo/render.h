@@ -201,7 +201,7 @@ namespace nsCessna
 		drawairplane(); // calls function to draw the airplane
 
 	//#ifdef DEBUG
-		gotoxy(1 ,3 );printf("thetas[0] %.02f",theta[0]);
+		gotoxy(1 ,3 );printf("theta[0] %.02f",theta[0]);
 		gotoxy(21,3 );printf("theta[1] %.02f",theta[1]);
 		gotoxy(41,3 );printf("theta[2] %.02f",theta[2]);
 
