@@ -21,10 +21,6 @@
 // *                                                                    *
 // **********************************************************************
 
-#ifndef CESSNASKYHAWK_H_VERTICES
-#define CESSNASKYHAWK_H_VERTICES
-
-#include  "globals.h"
 namespace nsCessna
 {
 
@@ -620,5 +616,3 @@ namespace nsCessna
 	// *                                                                    *
 	// **********************************************************************
 }
-
-#endif CESSNASKYHAWK_H_VERTICES

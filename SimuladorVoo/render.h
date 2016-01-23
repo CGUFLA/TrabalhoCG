@@ -21,12 +21,6 @@
 // *                                                                    *
 // **********************************************************************
 
-#ifndef CESSNASKYHAWK_H_RENDER
-#define CESSNASKYHAWK_H_RENDER
-
-#include  "globals.h"
-#include  "draw.h"
-#include  "flightdynamics.h"
 
 namespace nsCessna
 {
@@ -413,5 +407,3 @@ namespace nsCessna
 
 
 }
-
-#endif CESSNASKYHAWK_H_RENDER

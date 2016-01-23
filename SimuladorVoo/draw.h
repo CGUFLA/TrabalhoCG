@@ -17,10 +17,6 @@
 //*                                                                    *
 //**********************************************************************
 
-#ifndef CESSNASKYHAWK_H_DRAW
-#define CESSNASKYHAWK_H_DRAW
-
-#include  "globals.h"
 namespace nsCessna
 {
 
@@ -1012,4 +1008,3 @@ namespace nsCessna
 
 	// End of drawing functions
 }
-#endif CESSNASKYHAWK_H_DRAW

@@ -26,27 +26,23 @@
 //      nate@pobox.com, http://www.pobox.com/~nate
 //		also included in the workspace is Nate Robins glm.c file
 
-#ifndef CESSNASKYHAWK_H
-#define CESSNASKYHAWK_H
-
 #include <windows.h>
-#include <io.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
+//#include <curses.h>
 #include <math.h>
-#include <GL\glut.h>
+#include <GL/glut.h>
 
+#include  "globals.h"
 #include  "glm.h"
 #include  "vertices.h"
 #include  "materials.h"
 #include  "polygons.h"
 #include  "draw.h"
-#include  "render.h"
 #include  "flightdynamics.h"
-#include  "globals.h"
-#include  "input.h"
+#include  "render.h"
 #include  "splash.h"
+#include  "input.h"
 
 namespace nsCessna
 {
@@ -55,31 +51,7 @@ namespace nsCessna
 
 	void initSim(void)
 	{
-		/*	printf("DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG\n");
-			printf("Flight Simulator for Cessna Skyhawk\n");
-			printf("Tutorial\n");
-			printf("http://robgotschall.dhs.org/	\n");
-			printf("January 20, 2001 - April 3, 2001\n\n");
 
-			printf("GLUT_WINDOW_X	        %d \n",glutGet(GLUT_WINDOW_X));
-			printf("GLUT_WINDOW_Y			%d \n",glutGet(GLUT_WINDOW_Y));
-			printf("GLUT_WINDOW_WIDTH		%d \n",glutGet(GLUT_WINDOW_WIDTH));
-			printf("GLUT_WINDOW_HEIGHT		%d \n",glutGet(GLUT_WINDOW_HEIGHT));
-			printf("GLUT_SCREEN_WIDTH		%d \n",glutGet(GLUT_SCREEN_WIDTH));
-			printf("GLUT_SCREEN_HEIGH		%d \n\n",glutGet(GLUT_SCREEN_HEIGHT));
-			printf("Instructions for use\n");
-			printf("Use the x and v keys to control the roll of the plane\n");
-			printf("Use the d and c keys to control the pitch of the plane.\n");
-			printf("Use the + and - keys to control the speed of the plane.\n");
-			printf("Keys 1, 2, 3, 4, and 6 control the different views.\n");
-			printf("Key 5 puts into floating camera view \n");
-			printf(" j, k, l, u, i, o control the floating camera\n");
-			printf("Use the right and left mouse buttons to control the yaw of the plane.\n");
-			printf("To reset the plane to original position press the r key.\n");
-			printf("To quit press the q key.\n");
-	*/
-
-			//glutInit(&argc, argv);
 			glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH); //utiliza um buffer duplo na criação dos desenhos. O desenho é feito do buffer depth e enviado para o buffer rgb para evitar que haja evitando cintilações
 	 		glutInitWindowSize(576, 384); // cria uma janela de tamanho padrão 576 x 384
 			mainwindow = glutCreateWindow("Simulador de vôo"); // cria uma janela com o título informado
@@ -132,5 +104,3 @@ namespace nsCessna
 	}
 
 }
-
-#endif CESSNASKYHAWK_H

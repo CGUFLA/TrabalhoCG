@@ -1,10 +1,6 @@
 
 
 
-#ifndef CESSNASKYHAWK_H_SPLASH
-#define CESSNASKYHAWK_H_SPLASH
-
-#include  "globals.h"
 namespace nsCessna
 {
 
@@ -169,4 +165,3 @@ namespace nsCessna
 
 }
 
-#endif CESSNASKYHAWK_H_SPLASH
