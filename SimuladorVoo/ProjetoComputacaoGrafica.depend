@@ -6,7 +6,7 @@
 	<stdlib.h>
 	"cessna.h"
 
-1301114762 c:\mingw\include\windows.h
+1301111162 c:\mingw\include\windows.h
 	<winresrc.h>
 	<stdarg.h>
 	<windef.h>
@@ -36,7 +36,7 @@
 	<winsock.h>
 	<ole2.h>
 
-1301114764 c:\mingw\include\winresrc.h
+1301111163 c:\mingw\include\winresrc.h
 	<winuser.h>
 	<winnt.h>
 	<winver.h>
@@ -44,70 +44,70 @@
 	<dlgs.h>
 	<commctrl.h>
 
-1301114764 c:\mingw\include\winuser.h
+1301111164 c:\mingw\include\winuser.h
 
-1301114764 c:\mingw\include\winnt.h
+1301111163 c:\mingw\include\winnt.h
 	<winerror.h>
 	<string.h>
 	<basetsd.h>
 	<pshpack4.h>
 	<poppack.h>
 
-1301114762 c:\mingw\include\winerror.h
+1301111162 c:\mingw\include\winerror.h
 
-1314143994 c:\mingw\include\string.h
+1419780513 c:\mingw\include\string.h
 	<_mingw.h>
 	<stddef.h>
 
-1314143992 c:\mingw\include\_mingw.h
+1419780513 c:\mingw\include\_mingw.h
 
-1301114750 c:\mingw\include\basetsd.h
+1301111149 c:\mingw\include\basetsd.h
 
-1301114758 c:\mingw\include\pshpack4.h
+1301111157 c:\mingw\include\pshpack4.h
 
-1301114758 c:\mingw\include\poppack.h
+1301111157 c:\mingw\include\poppack.h
 
-1301114764 c:\mingw\include\winver.h
+1301111164 c:\mingw\include\winver.h
 
-1301114750 c:\mingw\include\dde.h
+1301111149 c:\mingw\include\dde.h
 
-1301114750 c:\mingw\include\dlgs.h
+1301111150 c:\mingw\include\dlgs.h
 
-1301114750 c:\mingw\include\commctrl.h
+1301111149 c:\mingw\include\commctrl.h
 	<prsht.h>
 
-1301114758 c:\mingw\include\prsht.h
+1301111157 c:\mingw\include\prsht.h
 
-1301114762 c:\mingw\include\windef.h
+1301111162 c:\mingw\include\windef.h
 	<winnt.h>
 
-1301114762 c:\mingw\include\wincon.h
+1301111162 c:\mingw\include\wincon.h
 
-1301114762 c:\mingw\include\winbase.h
+1301111161 c:\mingw\include\winbase.h
 
-1301114762 c:\mingw\include\wingdi.h
+1301111162 c:\mingw\include\wingdi.h
 
-1301114764 c:\mingw\include\winnls.h
+1301111163 c:\mingw\include\winnls.h
 
-1301114764 c:\mingw\include\winnetwk.h
+1301111163 c:\mingw\include\winnetwk.h
 
-1301114764 c:\mingw\include\winreg.h
+1301111163 c:\mingw\include\winreg.h
 
-1301114764 c:\mingw\include\winsvc.h
+1301111164 c:\mingw\include\winsvc.h
 
-1301114750 c:\mingw\include\cderr.h
+1301111149 c:\mingw\include\cderr.h
 
-1301114750 c:\mingw\include\ddeml.h
+1301111149 c:\mingw\include\ddeml.h
 
-1301114752 c:\mingw\include\imm.h
+1301111151 c:\mingw\include\imm.h
 
-1301114754 c:\mingw\include\lzexpand.h
+1301111154 c:\mingw\include\lzexpand.h
 
-1301114754 c:\mingw\include\mmsystem.h
+1301111154 c:\mingw\include\mmsystem.h
 
-1301114756 c:\mingw\include\nb30.h
+1301111155 c:\mingw\include\nb30.h
 
-1301114758 c:\mingw\include\rpc.h
+1301111158 c:\mingw\include\rpc.h
 	<windows.h>
 	<rpcdce.h>
 	<rpcnsi.h>
@@ -115,71 +115,71 @@
 	<winerror.h>
 	<excpt.h>
 
-1301114758 c:\mingw\include\rpcdce.h
+1301111158 c:\mingw\include\rpcdce.h
 	<basetyps.h>
 	<rpcdcep.h>
 
-1301114750 c:\mingw\include\basetyps.h
+1301111149 c:\mingw\include\basetyps.h
 
-1301114760 c:\mingw\include\rpcdcep.h
+1301111159 c:\mingw\include\rpcdcep.h
 
-1301114760 c:\mingw\include\rpcnsi.h
+1301111159 c:\mingw\include\rpcnsi.h
 
-1301114760 c:\mingw\include\rpcnterr.h
+1301111159 c:\mingw\include\rpcnterr.h
 
-1314143994 c:\mingw\include\excpt.h
+1419780513 c:\mingw\include\excpt.h
 	<_mingw.h>
 	<windef.h>
 
-1301114760 c:\mingw\include\shellapi.h
+1301111160 c:\mingw\include\shellapi.h
 	<pshpack2.h>
 	<poppack.h>
 
-1301114758 c:\mingw\include\pshpack2.h
+1301111157 c:\mingw\include\pshpack2.h
 
-1301114764 c:\mingw\include\winperf.h
+1301111163 c:\mingw\include\winperf.h
 
-1301114750 c:\mingw\include\commdlg.h
+1301111149 c:\mingw\include\commdlg.h
 	<unknwn.h>
 	<prsht.h>
 
-1301114762 c:\mingw\include\unknwn.h
+1301111161 c:\mingw\include\unknwn.h
 	<windows.h>
 	<objfwd.h>
 	<wtypes.h>
 
-1301114756 c:\mingw\include\objfwd.h
+1301111156 c:\mingw\include\objfwd.h
 	<basetyps.h>
 
-1301114764 c:\mingw\include\wtypes.h
+1301111164 c:\mingw\include\wtypes.h
 	<rpc.h>
 	<rpcndr.h>
 
-1301114760 c:\mingw\include\rpcndr.h
+1301111159 c:\mingw\include\rpcndr.h
 	<rpcnsip.h>
 	<objfwd.h>
 
-1301114760 c:\mingw\include\rpcnsip.h
+1301111159 c:\mingw\include\rpcnsip.h
 
-1301114764 c:\mingw\include\winspool.h
+1301111163 c:\mingw\include\winspool.h
 
-1301114764 c:\mingw\include\winsock2.h
+1301111163 c:\mingw\include\winsock2.h
 	<windows.h>
 
-1301114764 c:\mingw\include\winsock.h
+1301111163 c:\mingw\include\winsock.h
 	<windows.h>
 	<mswsock.h>
 
-1301114756 c:\mingw\include\mswsock.h
+1301111155 c:\mingw\include\mswsock.h
 
-1301114756 c:\mingw\include\ole2.h
+1301111156 c:\mingw\include\ole2.h
 	<winerror.h>
 	<objbase.h>
 	<olectlid.h>
 	<oleauto.h>
 	<oleidl.h>
 
-1301114756 c:\mingw\include\objbase.h
+1301111155 c:\mingw\include\objbase.h
 	<rpc.h>
 	<rpcndr.h>
 	<stdlib.h>
@@ -189,25 +189,25 @@
 	<objidl.h>
 	<cguid.h>
 
-1314143994 c:\mingw\include\stdlib.h
+1419780513 c:\mingw\include\stdlib.h
 	<_mingw.h>
 	<stddef.h>
 
-1301114756 c:\mingw\include\objidl.h
+1301111156 c:\mingw\include\objidl.h
 	<objfwd.h>
 
-1301114750 c:\mingw\include\cguid.h
+1301111149 c:\mingw\include\cguid.h
 
-1301114756 c:\mingw\include\olectlid.h
+1301111156 c:\mingw\include\olectlid.h
 
-1301114756 c:\mingw\include\oleauto.h
+1301111156 c:\mingw\include\oleauto.h
 	<oaidl.h>
 
-1301114756 c:\mingw\include\oaidl.h
+1301111155 c:\mingw\include\oaidl.h
 	<windows.h>
 	<ole2.h>
 
-1301114756 c:\mingw\include\oleidl.h
+1301111156 c:\mingw\include\oleidl.h
 	<objfwd.h>
 
 976677772 c:\mingw\include\gl\glut.h
@@ -240,24 +240,24 @@
 	"input.h"
 	"splash.h"
 
-1314143994 c:\mingw\include\io.h
+1419780513 c:\mingw\include\io.h
 	<_mingw.h>
 	<sys/types.h>
 
-1314143996 c:\mingw\include\sys\types.h
+1419780513 c:\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
 
-1314143994 c:\mingw\include\stdio.h
+1419780513 c:\mingw\include\stdio.h
 	<_mingw.h>
 	<stddef.h>
 	<stdarg.h>
 	<sys/types.h>
 
-1314143992 c:\mingw\include\conio.h
+1419780513 c:\mingw\include\conio.h
 	<_mingw.h>
 
-1314143994 c:\mingw\include\math.h
+1419780513 c:\mingw\include\math.h
 	<_mingw.h>
 
 1275061740 c:\users\lucas\desktop\projetocomputacaografica\glm.h
@@ -291,5 +291,60 @@
 	"splash.h"
 
 1163379002 c:\users\lucas\desktop\projetocomputacaografica\splash.h
+	"globals.h"
+
+1453501297 source:c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\main.cpp
+	"cessna.h"
+
+1453516766 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\cessna.h
+	<windows.h>
+	<io.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<math.h>
+	<GL\glut.h>
+	"glm.h"
+	"vertices.h"
+	"materials.h"
+	"polygons.h"
+	"draw.h"
+	"render.h"
+	"flightdynamics.h"
+	"globals.h"
+	"input.h"
+	"splash.h"
+
+1453500836 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\glm.h
+	<GL/glut.h>
+
+1453500836 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\vertices.h
+	"globals.h"
+
+1453500836 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\globals.h
+
+1453500836 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\materials.h
+	"globals.h"
+
+1453500836 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\polygons.h
+	"globals.h"
+
+1453500836 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\draw.h
+	"globals.h"
+
+1453500836 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\render.h
+	"globals.h"
+	"draw.h"
+	"flightdynamics.h"
+
+1453500836 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\flightdynamics.h
+	"globals.h"
+
+1453500836 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\input.h
+	<GL\glut.h>
+	"globals.h"
+	"splash.h"
+
+1453500836 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\splash.h
 	"globals.h"
 

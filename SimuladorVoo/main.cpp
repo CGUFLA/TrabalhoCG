@@ -1,26 +1,20 @@
-/*
- * GLUT Shapes Demo
- *
- * Written by Nigel Stewart November 2003
- *
- * This program is test harness for the sphere, cone
- * and torus shapes in GLUT.
- *
- * Spinning wireframe and smooth shaded shapes are
- * displayed until the ESC or q key is pressed.  The
- * number of geometry stacks and slices can be adjusted
- * using the + and - keys.
- *
- */
 
-#ifdef __APPLE__
-#include <GLUT/glut.h>
-#else
-#include <windows.h>
-#include <GL/glut.h>
-#endif
-
-#include <stdlib.h>
+// *********************************************************************
+// *     This software is made available only to individuals and only  *
+// *     for educational purposes. Any and all commercial use is       *
+// *     stricly prohibited.                                           *
+// *********************************************************************
+//**********************************************************************
+//* Disclaimer: Any borrowed code used in this                         *
+//*             program is the property of the                         *
+//*             code originator. credit to them.                       *
+//*                                                                    *
+//*                                                                    *
+//*   Unfinished                                                       *
+//*   WARNING:                                                         *
+//*                                                                    *
+//*                                                                    *
+//**********************************************************************
 
 #include "cessna.h"
 using  namespace nsCessna;

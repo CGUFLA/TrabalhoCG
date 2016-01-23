@@ -80,11 +80,11 @@ namespace nsCessna
 	*/
 
 			//glutInit(&argc, argv);
-			glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	 		glutInitWindowSize(576, 384); // makes default window size to 500x500
-			mainwindow = glutCreateWindow("Cessna Skyhawk Simulator - Tutorial"); // creates window and title
+			glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH); //utiliza um buffer duplo na criação dos desenhos. O desenho é feito do buffer depth e enviado para o buffer rgb para evitar que haja evitando cintilações
+	 		glutInitWindowSize(576, 384); // cria uma janela de tamanho padrão 576 x 384
+			mainwindow = glutCreateWindow("Simulador de vôo"); // cria uma janela com o título informado
 			//glutInitWindowSize(417, 374); // makes splash screen window
-			eyex = 0.0; // sets default look at coordinates (same as view 1)
+			eyex = 0.0; //seta as posições de visão padrão do sistema
 			eyey = 110.0;
 			eyez = -550.0;
 			atx = 0.0;
@@ -98,15 +98,15 @@ namespace nsCessna
 
 			//glutPositionWindow(47,60); // positions the window
 			//glutKeyboardFunc(splashkey); // sets the splash screen keyboard callback
-			glutDisplayFunc(splashdisplay); // sets the splash screen display callback
+			glutDisplayFunc(splashdisplay); // seta o callback da tela inicial do jogo
 			//	glutIdleFunc(splashidle); // sets the splash screen idle callback
-				glEnable(GL_DEPTH_TEST); // enables the depth test
-			glutReshapeFunc(myReshape); // sets the reshape callback to myReshape
+				glEnable(GL_DEPTH_TEST); // ativa o depth test que gerencia o z-buffer, um gerenciador de profundidade para evitar sobreposições
+			glutReshapeFunc(myReshape); // seta myReshape como callback para redesenho da tela
 
-			glutSetWindow(mainwindow); // names the mainwindow
+			glutSetWindow(mainwindow);
 			glutPositionWindow(384,476);
-			glutReshapeFunc(myReshape); // sets the main reshape callback
-			glutKeyboardFunc(key); // sets the main keyboard callback
+			glutReshapeFunc(myReshape);
+			glutKeyboardFunc(key);
 			glutSpecialFunc (keyboard_s);
 			//glutMotionFunc(motion);
 			//glutMouseFunc(mouse); // sets the main mouse callback
@@ -114,10 +114,10 @@ namespace nsCessna
 			glutPassiveMotionFunc(motion);
 
 
-			glutDisplayFunc(display); // sets the main display function
-			   glutIdleFunc(yaw); // sets the main idle funciton
-			   glEnable(GL_DEPTH_TEST); // enables depth test
-			   glEnable(GL_NORMALIZE); // enables automatic normalizationi
+			glutDisplayFunc(display); // seta display como a função principal do desenho
+			   glutIdleFunc(yaw); // função que irá ser usada quando o sistema estiver ocioso
+			   glEnable(GL_DEPTH_TEST);
+			   glEnable(GL_NORMALIZE); //para evitar comportamentos erroneos da luminosidade, a função ativa a normalização dos vetores
 
 
 	}
@@ -128,7 +128,7 @@ namespace nsCessna
 
 	void runSim(void)
 	{
-		glutMainLoop(); // begins the main callback loop
+		glutMainLoop(); // faz um loop no sistema para ficar redesenhando sempre até o sistema ser fechado
 	}
 
 }
