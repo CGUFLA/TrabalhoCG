@@ -39,7 +39,6 @@ namespace nsCessna
 	float forwardpos = -350; // the position in the y axis that the plane starts at with respect to the ground
 	float sidewayspos = 0; // the position in the x axis that the plane starts at with respect to the ground
 	int stalling = 0; // flag for if the plane is in a stall or not
-	int kbCode=0;
 
 	GLfloat splash[][2] = {{0,0},{0,300},{300,300},{300,0}};
 
@@ -49,10 +48,8 @@ namespace nsCessna
 	int insidecamera = 0; // or inside the plane mode
 	int bowlerpoles; // variable for spacing and counting the poles on the porch of Bowler
 	int bowlersteps; // variable for spacing and counting of steps up to Bowler
-	int notrun = 1; // flag so that the texture file will only be loaded once when rendering
 	// variables needed for Nate Robins Code for texture mapping ppm files.  See below
 	GLint offset = 0;  // counter for placement of the different pillars
-	GLUquadricObj  *teachoutcyl; // defined for the cylindrical portion of Teachout Price
 	static GLfloat propspin = 0; // gives the angle that the propellor is at
 	unsigned char* image = NULL;
 	int iheight, iwidth;
@@ -65,12 +62,9 @@ namespace nsCessna
 
 	void gotoxy(int x, int y)
 	{
-		COORD coord;
-		coord.X = x; coord.Y = y;
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+		printf("\033[%d;%dH", y+1, x+1);
 		return;
 	}
-
 
 
 

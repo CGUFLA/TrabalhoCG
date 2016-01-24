@@ -48,10 +48,8 @@ namespace nsCessna
 	int insidecamera = 0; // or inside the plane mode
 	int bowlerpoles; // variable for spacing and counting the poles on the porch of Bowler
 	int bowlersteps; // variable for spacing and counting of steps up to Bowler
-	int notrun = 1; // flag so that the texture file will only be loaded once when rendering
 	// variables needed for Nate Robins Code for texture mapping ppm files.  See below
 	GLint offset = 0;  // counter for placement of the different pillars
-	GLUquadricObj  *teachoutcyl; // defined for the cylindrical portion of Teachout Price
 	static GLfloat propspin = 0; // gives the angle that the propellor is at
 	unsigned char* image = NULL;
 	int iheight, iwidth;

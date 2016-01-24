@@ -70,15 +70,15 @@ namespace nsCessna
 
 			glutPositionWindow(384,476); //Posiciona a janela no centro da tela
 			glutReshapeFunc(myReshape);  // define myReshape como callback para redesenho da tela
+
 			glutKeyboardFunc(key); //define a funcao do teclado alfanumerico
 			glutSpecialFunc (keyboard_s); //define a funcao das teclas do teclado de UP, DOWN, RIGHT, LEFT
-
 			glutPassiveMotionFunc(motion); //define a funcao para o mouse
 
 			glutDisplayFunc(display); // define display como a função principal do desenho
-			   glutIdleFunc(yaw); // função que irá ser usada quando o sistema estiver ocioso
-			   glEnable(GL_DEPTH_TEST);
-			   glEnable(GL_NORMALIZE); //para evitar comportamentos erroneos da luminosidade, a função ativa a normalização dos vetores
+			glutIdleFunc(yaw); // função que irá ser usada quando o sistema estiver ocioso
+			glEnable(GL_DEPTH_TEST);
+			glEnable(GL_NORMALIZE); //para evitar comportamentos erroneos da luminosidade, a função ativa a normalização dos vetores
 
 
 	}

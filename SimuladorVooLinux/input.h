@@ -192,8 +192,8 @@ namespace nsCessna
 			    break;
 
 			case '5': //Camera inicial
-				floatcamera = 1;
-                insidecamera = 1;
+				floatcamera = 0;
+                insidecamera = 0;
                 eyex = 0.0;
                 eyey = 110.0;
                 eyez = -550.0;

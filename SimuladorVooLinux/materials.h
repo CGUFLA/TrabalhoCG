@@ -67,10 +67,10 @@ namespace nsCessna
 
 
 	// color for Hinsdale bricks
-		GLfloat brownmat_specular[]={215.0/256.0, 172.0/256.0, 0.0, 1.0};
-        GLfloat brownmat_diffuse[]={215.0/256.0, 172.0/256.0, 0.0, 1.0};
-        GLfloat brownmat_ambient[]={0.2, 0.2, 0.2, 1.0};
-        GLfloat brownmat_shininess={100.0};
+		GLfloat yellowmat_specular[]={215.0/256.0, 172.0/256.0, 0.0, 1.0};
+        GLfloat yellowmat_diffuse[]={215.0/256.0, 172.0/256.0, 0.0, 1.0};
+        GLfloat yellowmat_ambient[]={0.2, 0.2, 0.2, 1.0};
+        GLfloat yellowmat_shininess={100.0};
 
 
 // **********************************************************************
@@ -90,11 +90,11 @@ namespace nsCessna
 // **********************************************************************
 
 
-		void brownmaterial(){
-			glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, brownmat_specular);
-			glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, brownmat_ambient);
-			glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, brownmat_diffuse);
-			glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, brownmat_shininess);
+		void yellowmaterial(){
+			glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, yellowmat_specular);
+			glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, yellowmat_ambient);
+			glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, yellowmat_diffuse);
+			glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, yellowmat_shininess);
 		}
 
 // **********************************************************************
