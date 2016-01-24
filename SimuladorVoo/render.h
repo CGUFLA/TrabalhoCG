@@ -235,11 +235,11 @@ namespace nsCessna
 
 	void myReshape(int w, int h)
 	{
-		glMatrixMode(GL_PROJECTION); // puts into projection mode
-		glViewport(0, 0, w, h); // sets the viewport
-		glLoadIdentity(); // loads identity
-		gluPerspective(55.0, w/h, 1, 10000); // sets the perspective for a 55 degree angle width/height ratio starting at 1 going to 10000
-		glMatrixMode(GL_MODELVIEW); // returns back to Modelview mode
+		glMatrixMode(GL_PROJECTION);
+		glViewport(0, 0, w, h); // determina a porcao da janela da qual o OpenGl ira desenhar
+		glLoadIdentity(); // carrega a identidade
+		gluPerspective(55.0, w/h, 1, 10000); // configura a perspectiva para um angulo de 55graus, width/height de taxa de aspecto, distancia 1 plano corte e 10000 recorte
+		glMatrixMode(GL_MODELVIEW); // retorna para o modo ModelView
 	}
 
 	// **********************************************************************

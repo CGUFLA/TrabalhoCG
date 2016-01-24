@@ -39,7 +39,6 @@ namespace nsCessna
 	float forwardpos = -350; // the position in the y axis that the plane starts at with respect to the ground
 	float sidewayspos = 0; // the position in the x axis that the plane starts at with respect to the ground
 	int stalling = 0; // flag for if the plane is in a stall or not
-	int kbCode=0;
 
 	GLfloat splash[][2] = {{0,0},{0,300},{300,300},{300,0}};
 
