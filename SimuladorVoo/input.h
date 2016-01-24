@@ -70,21 +70,21 @@ namespace nsCessna
 	void keyboard_s (int key, int x, int y)
 	{
 		switch (key)
-		{	case GLUT_KEY_UP:
-    			theta[0] -= 0.3; // vai para cima
-    			updownspeed += 0.2;
+		{	case GLUT_KEY_DOWN:
+    			theta[0] -= 1.0; // aponta para cima
+    			updownspeed += 0.5;
 
     			break;
-			case GLUT_KEY_DOWN:
-    			theta[0] += 0.3; // vai para baixo
-    			updownspeed -= 0.2;
+			case GLUT_KEY_UP:
+    			theta[0] += 1.0; // aponta para baixo
+    			updownspeed -= 0.5;
 
     			break;
 			case GLUT_KEY_LEFT:
-				if (speed>0) theta[2] -= 0.3; // vai para a esquerda
+				if (speed>0) theta[2] -= 1.0; // vai para a esquerda
 			    break;
 			case GLUT_KEY_RIGHT:
-				if (speed>0) theta[2] += 0.3; // vai para a direita
+				if (speed>0) theta[2] += 1.0; // vai para a direita
 			    break;
 		}
 	}
@@ -99,21 +99,21 @@ namespace nsCessna
 			  exit(0);
 			  break;
 
-			case 'c':
-				theta[2] += 0.3; // vai para a direita
+			case 'd':
+				theta[2] += 1.0; // vai para a direita
 			    break;
 
-			case 'z':
-				theta[2] -= 0.3; // vai para a esquerda
+			case 'a':
+				theta[2] -= 1.0; // vai para a esquerda
 			    break;
+			case 'w':
+				theta[0] += 1.0; // vai para baixo
+				updownspeed -= 0.5;
+			    break;
+
 			case 's':
-				theta[0] += 0.3; // vai para baixo
-				updownspeed -= 0.2;
-			    break;
-
-			case 'x':
-				theta[0] -= 0.3; // vai para cima
-				updownspeed += 0.2;
+				theta[0] -= 1.0; // vai para cima
+				updownspeed += 0.5;
 			    break;
 
 			case 'r':
@@ -192,8 +192,8 @@ namespace nsCessna
 			    break;
 
 			case '5': //Camera inicial
-				floatcamera = 0;
-                insidecamera = 0;
+				floatcamera = 1;
+                insidecamera = 1;
                 eyex = 0.0;
                 eyey = 110.0;
                 eyez = -550.0;
