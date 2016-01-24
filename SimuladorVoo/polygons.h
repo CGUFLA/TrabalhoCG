@@ -16,11 +16,7 @@
 //*                                                                    *
 //*                                                                    *
 //**********************************************************************
-#ifndef CESSNASKYHAWK_H_POLYGONS
-#define CESSNASKYHAWK_H_POLYGONS
 
-
-#include  "globals.h"
 namespace nsCessna
 {
 
@@ -437,5 +433,3 @@ namespace nsCessna
 		glEnd();
 	}
 }
-
-#endif CESSNASKYHAWK_H_POLYGONS

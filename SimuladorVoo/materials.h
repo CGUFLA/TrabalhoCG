@@ -16,10 +16,8 @@
 //*                                                                    *
 //*                                                                    *
 //**********************************************************************
-#ifndef CESSNASKYHAWK_H_MATERIALS
-#define CESSNASKYHAWK_H_MATERIALS
 
-#include  "globals.h"
+
 namespace nsCessna
 {
 
@@ -163,5 +161,3 @@ namespace nsCessna
 
 
 }
-
-#endif CESSNASKYHAWK_H_MATERIALS

@@ -18,12 +18,6 @@
 //**********************************************************************
 
 
-#ifndef CESSNASKYHAWK_H_INPUT
-#define CESSNASKYHAWK_H_INPUT
-
-#include <GL\glut.h>
-#include  "globals.h"
-#include  "splash.h"
 namespace nsCessna
 {
 
@@ -458,4 +452,3 @@ namespace nsCessna
 
 }
 
-#endif CESSNASKYHAWK_H_INPUT

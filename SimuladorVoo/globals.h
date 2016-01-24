@@ -20,8 +20,6 @@
 // *                                                                   *
 // *********************************************************************
 
-#ifndef CESSNAGLOBALS_H
-#define CESSNAGLOBALS_H
 namespace nsCessna
 {
 
@@ -76,5 +74,5 @@ namespace nsCessna
 
 
 
+
 }
-#endif CESSNAGLOBALS_H
