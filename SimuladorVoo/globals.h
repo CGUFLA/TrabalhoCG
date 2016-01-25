@@ -62,7 +62,9 @@ namespace nsCessna
 
 	void gotoxy(int x, int y)
 	{
-		printf("\033[%d;%dH", y+1, x+1);
+		COORD coord;
+		coord.X = x; coord.Y = y;
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 		return;
 	}
 

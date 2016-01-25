@@ -53,7 +53,7 @@ namespace nsCessna
 		GLfloat light_ambient2[]={0.1, 0.1, 0.1, 1.0};
 		GLfloat light_diffuse2[]={1.0, 1.0, 1.0, 1.0};
 		GLfloat light_specular2[]={1.0, 1.0, 1.0, 1.0};
-		GLfloat light_position2[]={-1.0f, 1.0f, 1.0f, 0.0f};
+		//GLfloat light_position2[]={-1.0f, 1.0f, 1.0f, 0.0f};
 
 
 		GLfloat light_ambient3[]={0.1, 0.1, 0.1, 1.0};
@@ -72,7 +72,7 @@ namespace nsCessna
 		glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse1);
 		glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular1);
 
-		glLightfv(GL_LIGHT2, GL_POSITION, light_position2);
+		//glLightfv(GL_LIGHT2, GL_POSITION, light_position2);
 		glLightfv(GL_LIGHT2, GL_AMBIENT, light_ambient2);
 		glLightfv(GL_LIGHT2, GL_DIFFUSE, light_diffuse2);
 		glLightfv(GL_LIGHT2, GL_SPECULAR, light_specular2);
@@ -95,9 +95,9 @@ namespace nsCessna
 		glShadeModel(GL_SMOOTH);
 		glEnable(GL_LIGHTING);
 		glEnable(GL_LIGHT0);
-		//glEnable(GL_LIGHT1);
+		glEnable(GL_LIGHT1);
 		//lights 2 and 3 are taken out because world looks natural without them
-		glEnable(GL_LIGHT2);
+		//glEnable(GL_LIGHT2);
 		//glEnable(GL_LIGHT3);
 
 		//glDepthFunc(GL_LEQUAL);
@@ -195,21 +195,24 @@ namespace nsCessna
 		drawairplane(); // calls function to draw the airplane
 
 	//#ifdef DEBUG
-		gotoxy(1 ,3 );printf("theta[0] %.02f",theta[0]);
-		gotoxy(21,3 );printf("theta[1] %.02f",theta[1]);
-		gotoxy(41,3 );printf("theta[2] %.02f",theta[2]);
+		gotoxy(1 ,3 );printf("Angulo do Leme %.02f",theta[0]);
+		gotoxy(32,3 );printf("Angulo do Cenario %.02f",theta[1]);
 
+		gotoxy(1,5 );printf("Inclinacao do Aviao %.02f",theta[2]);
 
-		gotoxy(1 ,4 );printf("yaw0 %.02f",yaw0);
-		gotoxy(21,4 );printf("yaw1 %.02f",yaw1);
-		gotoxy(41,4 );printf("planeyaw %.02f",planeyaw);
-		gotoxy(61,4 );printf("turnspeed %.02f",turnspeed);
+		//gotoxy(1 ,4 );printf("yaw0 %.02f",yaw0);
+		//gotoxy(21,4 );printf("yaw1 %.02f",yaw1);
+		//gotoxy(1,4 );printf("planeyaw %.02f",planeyaw);
 
-		gotoxy(1 ,5 );printf("propspin %.02f",propspin);
-		gotoxy(21,5 );printf("propvar %.02f",propvar);
-		gotoxy(1 ,6 );printf("elevation %.02f",elevation);
-		gotoxy(21,6 );printf("updownspeed %.02f",updownspeed);
-		gotoxy(1 ,7 );printf("speed %.02f",speed);gotoxy(1 ,21);
+		gotoxy(32,5 );printf("Velocidade Inclinacao %.02f",turnspeed);
+
+		gotoxy(1 ,7 );printf("Angulo da Helice %.02f",propspin);
+		gotoxy(32,7 );printf("Velocidade da Helice %.02f",propvar);
+		gotoxy(1 ,9 );printf("Elevacao %.02f",elevation);
+		//gotoxy(32,9 );printf("Velocidade de Subida/Descida %.02f",updownspeed);
+		gotoxy(1 ,11 );printf("Velocidade do Aviao %.02f",speed);
+
+        gotoxy(1 ,16 );printf("Velocidade Minima para Decolar: 12.40");gotoxy(1 ,21);
 	//#endif
 
 	}
@@ -232,7 +235,7 @@ namespace nsCessna
 		glMatrixMode(GL_PROJECTION); // puts into projection mode
 		glViewport(0, 0, w, h); // sets the viewport
 		glLoadIdentity(); // loads identity
-		gluPerspective(55.0, w/h, 1, 10000); // sets the perspective for a 55 degree angle width/height ratio starting at 1 going to 10000
+		gluPerspective(55.0, w/h, 1, 15000); // sets the perspective for a 55 degree angle width/height ratio starting at 1 going to 10000
 		glMatrixMode(GL_MODELVIEW); // returns back to Modelview mode
 	}
 

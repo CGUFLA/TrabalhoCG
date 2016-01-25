@@ -1,9 +1,11 @@
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
-//#include <curses.h>
 #include <math.h>
 #include <GL/glut.h>
+
+#define windowWidth  776
+#define windowHeight 584
 
 #include  "globals.h"
 #include  "glm.h"
@@ -13,7 +15,6 @@
 #include  "draw.h"
 #include  "flightdynamics.h"
 #include  "render.h"
-#include  "splash.h"
 #include  "input.h"
 
 namespace nsCessna
@@ -25,9 +26,10 @@ namespace nsCessna
 	{
 
 			glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH); //utiliza um buffer duplo na criação dos desenhos. O desenho é feito do buffer depth e enviado para o buffer rgb para evitar que haja evitando cintilações
-	 		glutInitWindowSize(576, 384); // cria uma janela de tamanho padrão 576 x 384
+	 		glutInitWindowSize(windowWidth, windowHeight); // cria uma janela de tamanho padrão 576 x 384
 			mainwindow = glutCreateWindow("Simulador de vôo"); // cria uma janela com o título informado
-			eyex = 0.0; //seta as posições de visão padrão do sistema
+
+			eyex = 0.0; // define as posições de visão padrão do sistema
 			eyey = 110.0;
 			eyez = -550.0;
 			atx = 0.0;
@@ -36,27 +38,23 @@ namespace nsCessna
 			upx = 0.0;
 			upy = 1.0;
 			upz = 0.0;
-			
-			glutDisplayFunc(splashdisplay); // seta o callback da tela inicial do jogo
-				glEnable(GL_DEPTH_TEST); // ativa o depth test que gerencia o z-buffer, um gerenciador de profundidade para evitar sobreposições
-			glutReshapeFunc(myReshape); // seta myReshape como callback para redesenho da tela
 
-			glutSetWindow(mainwindow);
-			glutPositionWindow(384,476);
-			glutReshapeFunc(myReshape);
-			glutKeyboardFunc(key);
-			glutSpecialFunc (keyboard_s);
-			glutPassiveMotionFunc(motion);
+			glEnable(GL_DEPTH_TEST); // ativa o depth test que gerencia o z-buffer, um gerenciador de profundidade para evitar sobreposições
 
+			glutPositionWindow(400,100); //Posiciona a janela no centro da tela
+			glutReshapeFunc(myReshape);  // define myReshape como callback para redesenho da tela
 
-			glutDisplayFunc(display); // seta display como a função principal do desenho
-			   glutIdleFunc(yaw); // função que irá ser usada quando o sistema estiver ocioso
-			   glEnable(GL_DEPTH_TEST);
-			   glEnable(GL_NORMALIZE); //para evitar comportamentos erroneos da luminosidade, a função ativa a normalização dos vetores
+			glutKeyboardFunc(key); //define a funcao do teclado alfanumerico
+			glutSpecialFunc (keyboard_s); //define a funcao das teclas do teclado de UP, DOWN, RIGHT, LEFT
+			glutPassiveMotionFunc(motion); //define a funcao para o mouse
+
+			glutDisplayFunc(display); // define display como a função principal do desenho
+			glutIdleFunc(yaw); // função que irá ser usada quando o sistema estiver ocioso
+			glEnable(GL_DEPTH_TEST);
+			glEnable(GL_NORMALIZE); //para evitar comportamentos erroneos da luminosidade, a função ativa a normalização dos vetores
 
 
 	}
-
 
 	void runSim(void)
 	{

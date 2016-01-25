@@ -348,10 +348,10 @@
 1453500836 c:\users\manollo guedes\desktop\workspace\trabalhocg\simuladorvoo\splash.h
 	"globals.h"
 
-1453529218 source:c:\users\lucas\documents\trabalhocg\simuladorvoo\main.cpp
+1453589543 source:c:\users\lucas\documents\trabalhocg\simuladorvoo\main.cpp
 	"cessna.h"
 
-1453589461 c:\users\lucas\documents\trabalhocg\simuladorvoo\cessna.h
+1453756596 c:\users\lucas\documents\trabalhocg\simuladorvoo\cessna.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
@@ -365,26 +365,25 @@
 	"draw.h"
 	"flightdynamics.h"
 	"render.h"
-	"splash.h"
 	"input.h"
 
 1453586470 c:\users\lucas\documents\trabalhocg\simuladorvoo\glm.h
 
 1453586470 c:\users\lucas\documents\trabalhocg\simuladorvoo\vertices.h
 
-1453589409 c:\users\lucas\documents\trabalhocg\simuladorvoo\globals.h
+1453756449 c:\users\lucas\documents\trabalhocg\simuladorvoo\globals.h
 
-1453586470 c:\users\lucas\documents\trabalhocg\simuladorvoo\materials.h
+1453753959 c:\users\lucas\documents\trabalhocg\simuladorvoo\materials.h
 
 1453586470 c:\users\lucas\documents\trabalhocg\simuladorvoo\polygons.h
 
-1453586470 c:\users\lucas\documents\trabalhocg\simuladorvoo\draw.h
+1453753959 c:\users\lucas\documents\trabalhocg\simuladorvoo\draw.h
 
-1453586470 c:\users\lucas\documents\trabalhocg\simuladorvoo\render.h
+1453761502 c:\users\lucas\documents\trabalhocg\simuladorvoo\render.h
 
-1453586470 c:\users\lucas\documents\trabalhocg\simuladorvoo\flightdynamics.h
+1453753959 c:\users\lucas\documents\trabalhocg\simuladorvoo\flightdynamics.h
 
-1453586470 c:\users\lucas\documents\trabalhocg\simuladorvoo\input.h
+1453753959 c:\users\lucas\documents\trabalhocg\simuladorvoo\input.h
 
 1453586470 c:\users\lucas\documents\trabalhocg\simuladorvoo\splash.h
 
