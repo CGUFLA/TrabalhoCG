@@ -609,20 +609,16 @@ namespace nsCessna
 
 
 
-	void drawColtonSteps(){ // function will draw the large stairs up to the Colton/Turner building
-		int stepsteps; // variable to increment the steps
-		for (stepsteps = 0; stepsteps < 25; stepsteps++){ // for loop to create 25 stairs
+	void drawColtonSteps(){ // Função desenha escadas de um dos prédios
+		int stepsteps; 
+		for (stepsteps = 0; stepsteps < 25; stepsteps++){ // criar 25 degraus
 			glPushMatrix();
-    			glTranslatef(1000, 5 + 10 * stepsteps, -800 + 10 * stepsteps); // puts the step into correct position
-    			glScalef(1000 - 10 * stepsteps, 10, 1500 - 10 * stepsteps); // sizes the stairs
-    			glutSolidCube(1.0); // creates the step
+    			glTranslatef(1000, 5 + 10 * stepsteps, -800 + 10 * stepsteps); // posiciona o degrau no local correto
+    			glScalef(1000 - 10 * stepsteps, 10, 1500 - 10 * stepsteps); // tamanho do degrau
+    			glutSolidCube(1.0); // cria o degrau
 			glPopMatrix();
 		}
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 
 	void drawColton(){
@@ -661,13 +657,9 @@ namespace nsCessna
         		glutSolidCube(1.0);
     		glPopMatrix();
 
-    		drawColtonSteps(); // function call to creat the steps
+    		drawColtonSteps(); 
 		glPopMatrix();
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 
 	void drawGerstacker(){
@@ -701,10 +693,6 @@ namespace nsCessna
 
 		glPopMatrix();
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 	void drawKennedy(){
 		glPushMatrix();
