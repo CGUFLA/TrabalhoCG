@@ -661,7 +661,7 @@ namespace nsCessna
 		glPopMatrix();
 	}
 
-
+/*Verificar o que as próximas funções fazem*/
 	void drawGerstacker(){
 		glPushMatrix();
     		glTranslatef(9000, -80, -16000);
@@ -714,10 +714,6 @@ namespace nsCessna
 		glPopMatrix();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
 
 	void drawQuad(){
 		glPushMatrix();
@@ -750,10 +746,6 @@ namespace nsCessna
 
 		glPopMatrix();
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 
 	void drawBatesRoof(){ // function for drawing type of roof that bates features
@@ -841,15 +833,11 @@ namespace nsCessna
 		glPopMatrix();
 	}
 
-	// end of building drawing functions
-
-
 	// **********************************************************************
 	// *                                                                    *
 	// **********************************************************************
 
-	// will draw the roads 10 thick
-	// in same sort of position, size, draw type of manner as the buildings
+	// Desenho das estradas
 
 	// **********************************************************************
 	// *                                                                    *
@@ -881,6 +869,4 @@ namespace nsCessna
     		glPopMatrix();
 		glPopMatrix();
 	}
-
-	// End of drawing functions
 }
