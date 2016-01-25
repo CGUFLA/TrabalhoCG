@@ -53,7 +53,7 @@ namespace nsCessna
 		GLfloat light_ambient2[]={0.1, 0.1, 0.1, 1.0};
 		GLfloat light_diffuse2[]={1.0, 1.0, 1.0, 1.0};
 		GLfloat light_specular2[]={1.0, 1.0, 1.0, 1.0};
-		GLfloat light_position2[]={-1.0f, 1.0f, 1.0f, 0.0f};
+		GLfloat light_position2[]={10000, 5000,10000, 0.0};
 
 
 		GLfloat light_ambient3[]={0.1, 0.1, 0.1, 1.0};
