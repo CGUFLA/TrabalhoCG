@@ -1,31 +1,3 @@
-
-// *********************************************************************
-// *     This software is made available only to individuals and only  *
-// *     for educational purposes. Any and all commercial use is       *
-// *     stricly prohibited.                                           *
-// *********************************************************************
-//**********************************************************************
-//* Disclaimer: Any borrowed code used in this                         *
-//*             program is the property of the                         *
-//*             code originator. credit to them.                       *
-//*                                                                    *
-//*                                                                    *
-//*   Unfinished                                                       *
-//*   WARNING:                                                         *
-//*                                                                    *
-//*                                                                    *
-//*                                                                    *
-//**********************************************************************
-// *********************************************************************
-// *                                                                   *
-// *********************************************************************
-
-
-//		this file is from Nate Robins Texture Tutorial
-//      Nate Robins, 1997, 2000
-//      nate@pobox.com, http://www.pobox.com/~nate
-//		also included in the workspace is Nate Robins glm.c file
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -49,13 +21,13 @@ namespace nsCessna
 
 
 
-	void initSim(void)
+	void initSim(void) //inicia simulador
 	{
 
 			glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH); //utiliza um buffer duplo na criação dos desenhos. O desenho é feito do buffer depth e enviado para o buffer rgb para evitar que haja evitando cintilações
 	 		glutInitWindowSize(windowWidth, windowHeight); // cria uma janela de tamanho padrão 576 x 384
 			mainwindow = glutCreateWindow("Simulador de vôo"); // cria uma janela com o título informado
-			//glutInitWindowSize(417, 374); // makes splash screen window
+
 			eyex = 0.0; // define as posições de visão padrão do sistema
 			eyey = 110.0;
 			eyez = -550.0;
@@ -82,10 +54,6 @@ namespace nsCessna
 
 
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 	void runSim(void)
 	{

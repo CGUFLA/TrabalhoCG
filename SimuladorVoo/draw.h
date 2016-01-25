@@ -1,52 +1,6 @@
-
-// *********************************************************************
-// *     This software is made available only to individuals and only  *
-// *     for educational purposes. Any and all commercial use is       *
-// *     stricly prohibited.                                           *
-// *********************************************************************
-//**********************************************************************
-//* Disclaimer: Any borrowed code used in this                         *
-//*             program is the property of the                         *
-//*             code originator. credit to them.                       *
-//*                                                                    *
-//*                                                                    *
-//*   Unfinished                                                       *
-//*   WARNING:                                                         *
-//*                                                                    *
-//*                                                                    *
-//*                                                                    *
-//**********************************************************************
-
 namespace nsCessna
 {
-
-
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-	//previous function gives this kind of roof with 100 steps to the top
-	////////*////////////////////////////////*/
-	///////*//////////////////////////////////*/
-	//////*////////////////////////////////////*/
-	/////*//////////////////////////////////////*/
-	////*////////////////////////////////////////*/
-	///*//////////////////////////////////////////*/
-	//*////////////////////////////////////////////*/
-	/*//////////////////////////////////////////////*/
-
-
-	//drawing functions
-	//Key to function names draw[partname]()
-	//functions contain function calls to the polygon functions and the numbers of the verticies in the
-	//arrays specified within those functions.
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-
+	//funções de desenho
     // Funcao que desenha o Bico da Helice do aviao
 	void drawnose()
 	{
@@ -57,21 +11,12 @@ namespace nsCessna
 		nosepolygon3(3,0,4);
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
 
     // Funcao que desenha a Helice do aviao
 	void drawprop()
 	{
 		proppolygon4(0,1,2,3);
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
 
     // Funcao que desenha  os Suporte da Asa do aviao
 	void drawstruts()
@@ -90,11 +35,6 @@ namespace nsCessna
 		strutspolygon4(11,8,15,12);
 
 	}
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-
 
     // Funcao que desenha a Roda dianteira do aviao
 	void drawnosegear()
@@ -115,10 +55,6 @@ namespace nsCessna
 		nosegearpolygon4(13,8,14,19);
 
 	}
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
 
     // Funcao que desenha as Rodas traseiras do aviao
 	void drawlandinggears()
@@ -153,10 +89,6 @@ namespace nsCessna
 		rlandingpolygon4(13,8,14,19);
 
 	}
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
 
     // Funcao que desenha o Corpo do aviao
 	void drawbody()
@@ -172,7 +104,6 @@ namespace nsCessna
 		rbodypolygon5(10, 11, 12, 2, 3);
 		rbodypolygon4(12,2,1,0);
 		whitematerial();
-		//rlbodypolygon4(4, 5); // where the window was
 		bluematerial();
 		rlbodypolygon4(5, 6);
 		rlbodypolygon4(6,7);
@@ -186,13 +117,11 @@ namespace nsCessna
 		rlbodypolygon4(1,2);
 		rlbodypolygon4(2,3);
 		whitematerial();
-		//rlbodypolygon4(3,13); // where the back window was
 		bluematerial();
 		rlbodypolygon4(13,4);
 
 
 	}
-
 
 
     // Funcao que desenha as Asas dianteiras do aviao
@@ -258,11 +187,7 @@ namespace nsCessna
 		glEnd();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-
+	
     // Funcao que desenha as Asas traseiras do aviao
 	void drawtailwings()
 	{
@@ -318,12 +243,6 @@ namespace nsCessna
 		glEnd();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-
-
     // Funcao que desenha o chão
 	void drawground(){
 		grassmaterial();
@@ -338,10 +257,6 @@ namespace nsCessna
     		glVertex3fv(groundplane[3]);
 		glEnd();
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 
     // Funcao que desenha os pilares laterais das construções
@@ -364,27 +279,6 @@ namespace nsCessna
 
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-	//drawing the buildings
-	//Key to function names:  draw[building]()
-
-	//All of the following functions for the modeling of the buildings are in the basically same fashion
-	//glPushMatrix(); to keep the former matrix settings
-	//[color]material(); call for the material if changes
-	//glTranslatef(. . .); call to place the piece into position
-	//glScalef(. . .); call to size the piece correctly
-	//glRotatef(. . .); rotation of the piece if needed
-	//glutSolidCube(1.0); call to actually create the piece
-	//glPopMatrix(); to return to the former matrix settings
-	//repeat of the above steps until building is completely modeled
-	//various other function calls if necessary
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
     // Funcao que desenha o moleiro, os 2 primeiros predios a direita (no comeco do jogo)
 	void drawmiller(){
@@ -425,9 +319,6 @@ namespace nsCessna
 		drawpillars();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
     // Funcao que desenha o ultimo predio a direita (no comeco do jogo)
 	void drawhenry(){
@@ -468,19 +359,6 @@ namespace nsCessna
 		drawpillars();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-	//most of the following building drawing functions are the same as above, except for the following
-	//glPushMatrix(); to save the previous matrix
-	//glTranslatef(. . .); to put the center where the building should be
-	// . . . steps to here like previous building functions
-	//glPopMatrix(); returns to the previous matrix
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 
     // Funcao que desenha o boliche, 3 predio a direita (no comeco do jogo)
@@ -533,41 +411,31 @@ namespace nsCessna
     		glPopMatrix();
 
     		tanmaterial();
-    		for (bowlerpoles = 0; bowlerpoles < 8; bowlerpoles++){ // creates the poles on the Bowler porch
-    			if (bowlerpoles == 3) bowlerpoles += 2; // this will skip the middle two poles where there are none
+    		for (bowlerpoles = 0; bowlerpoles < 8; bowlerpoles++){ // cria os pilares da varanda do boliche
+    			if (bowlerpoles == 3) bowlerpoles += 2; // vai pular os pilares do meio
     			glPushMatrix();
-        			glTranslatef(-200 + 200 * bowlerpoles, 330, 2480); // place the poles in the position according to the pole it is on
-        			glScalef(20, 260, 20); // sizes the pole correctly
-        			glutSolidCube(1.0); // creates the pole
+        			glTranslatef(-200 + 200 * bowlerpoles, 330, 2480); // coloca os pilares no local correto
+        			glScalef(20, 260, 20); // regula o tamanho dos pilares
+        			glutSolidCube(1.0); // cria os pilares
     			glPopMatrix();
     		}
 
 		glPopMatrix();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-
-
-	void drawGerstackerRoof(){ // function for drawing type of roof that gerstacker features
-		int roofsteps; // for incrementing the steps up the roof goes
+	void drawGerstackerRoof(){ // função para criar os telhados com a característica gerstacker
+		int roofsteps; // para incrementar os passos até o telhado
 		roofmaterial();
-		for (roofsteps = 0; roofsteps < 101; roofsteps++){ // for loop that increments the roofstep count
+		for (roofsteps = 0; roofsteps < 101; roofsteps++){ 
 			glPushMatrix();
-    			glTranslatef(0, 1202.5 + 5 * roofsteps, 0); // places in the middle and goes up by 5 for each step up
-    			glScalef(1450 - 14.5 * roofsteps, 5, 1200 - 5 * roofsteps); // changes the size to be smaller the higher the step
-    			glutSolidCube(1.0); // creates the steps of the roof
+    			glTranslatef(0, 1202.5 + 5 * roofsteps, 0);
+    			glScalef(1450 - 14.5 * roofsteps, 5, 1200 - 5 * roofsteps); // altera o tamanho para ser menor quanto maior for
+    			glutSolidCube(1.0); // cria o telhado
 			glPopMatrix();
 		}
 		redmaterial();
 	}
 
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
     // Funcao que desenha o predio amarelo na parte de tras (no comeco do jogo)
 	void drawBooth(){
@@ -613,14 +481,11 @@ namespace nsCessna
     		glPushMatrix();
         		glTranslatef(0, 0, 0);
         		glScalef(1, 1, 4.6);
-        		drawGerstackerRoof(); //puts a Gerstacker type roof on booth
+        		drawGerstackerRoof(); 
     		glPopMatrix();
 		glPopMatrix();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
     // Funcao que desenha o predio amarelo a esquerda (no inicio do jogo)
 	void drawHinsdale(){
@@ -653,10 +518,6 @@ namespace nsCessna
     		glPopMatrix();
 		glPopMatrix();
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
     // Funcao que desenha o predio vermelho com cilindro branco, ultimo a esquerda (no inicio do jogo)
 	void drawTeachout(){
@@ -695,9 +556,6 @@ namespace nsCessna
 
 		glPopMatrix();
 	}
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
     // Funcao que desenha o predio branco e amarelo no fundo do mapa (no comeco do jogo)
 	void drawArt(){
@@ -726,11 +584,8 @@ namespace nsCessna
 
 		glPopMatrix();
 	}
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
-    // ********
+
 	void drawMusic(){
 		glPushMatrix();
     		glTranslatef(9000, -80, -9500);
@@ -752,25 +607,18 @@ namespace nsCessna
 		glPopMatrix();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 
-	void drawColtonSteps(){ // function will draw the large stairs up to the Colton/Turner building
-		int stepsteps; // variable to increment the steps
-		for (stepsteps = 0; stepsteps < 25; stepsteps++){ // for loop to create 25 stairs
+	void drawColtonSteps(){ // Função desenha escadas de um dos prédios
+		int stepsteps; 
+		for (stepsteps = 0; stepsteps < 25; stepsteps++){ // criar 25 degraus
 			glPushMatrix();
-    			glTranslatef(1000, 5 + 10 * stepsteps, -800 + 10 * stepsteps); // puts the step into correct position
-    			glScalef(1000 - 10 * stepsteps, 10, 1500 - 10 * stepsteps); // sizes the stairs
-    			glutSolidCube(1.0); // creates the step
+    			glTranslatef(1000, 5 + 10 * stepsteps, -800 + 10 * stepsteps); // posiciona o degrau no local correto
+    			glScalef(1000 - 10 * stepsteps, 10, 1500 - 10 * stepsteps); // tamanho do degrau
+    			glutSolidCube(1.0); // cria o degrau
 			glPopMatrix();
 		}
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 
 	void drawColton(){
@@ -809,13 +657,9 @@ namespace nsCessna
         		glutSolidCube(1.0);
     		glPopMatrix();
 
-    		drawColtonSteps(); // function call to creat the steps
+    		drawColtonSteps(); 
 		glPopMatrix();
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 
 	void drawGerstacker(){
@@ -849,10 +693,6 @@ namespace nsCessna
 
 		glPopMatrix();
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 	void drawKennedy(){
 		glPushMatrix();
