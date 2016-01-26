@@ -1,29 +1,8 @@
-
-// *********************************************************************
-// *     This software is made available only to individuals and only  *
-// *     for educational purposes. Any and all commercial use is       *
-// *     stricly prohibited.                                           *
-// *********************************************************************
-//**********************************************************************
-//* Disclaimer: Any borrowed code used in this                         *
-//*             program is the property of the                         *
-//*             code originator. credit to them.                       *
-//*                                                                    *
-//*                                                                    *
-//*   Unfinished                                                       *
-//*   WARNING:                                                         *
-//*                                                                    *
-//*                                                                    *
-//*                                                                    *
-//**********************************************************************
-
 namespace nsCessna
 {
 
 
-//polygon drawing functions named in form [side l or r][plane part]polygon[number of verticies]
-//all of these just create a polygon with the number of verticies in the name with verticies from the arrays
-//that are specified
+//funções que desenham os polígonos que formam as cenas
 
 // **********************************************************************
 // *                                                                    *
