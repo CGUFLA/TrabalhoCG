@@ -1,26 +1,3 @@
-
-// *********************************************************************
-// *     This software is made available only to individuals and only  *
-// *     for educational purposes. Any and all commercial use is       *
-// *     stricly prohibited.                                           *
-// *********************************************************************
-//**********************************************************************
-//* Disclaimer: Any borrowed code used in this                         *
-//*             program is the property of the                         *
-//*             code originator. credit to them.                       *
-//*                                                                    *
-//*                                                                    *
-//*   Unfinished                                                       *
-//*   WARNING:                                                         *
-//*                                                                    *
-//*                                                                    *
-//*                                                                    *
-//**********************************************************************
-
-// **********************************************************************
-// *                                                                    *
-// **********************************************************************
-
 namespace nsCessna
 {
 
@@ -28,25 +5,23 @@ namespace nsCessna
 	// *                                                                    *
 	// **********************************************************************
 
-	// The following yaw function was written originally to get around the fact that in the glut proceedure
-	// for the mouse function, it will be called per click or unclick but not for while it was held down.
-	// To compensate for this the yaw movement was written as the idle callback so that while the mouse
-	// button is held down the plane will yaw.  This is why the idle callback is called yaw.  It now also
-	// contains the commands for movement as well as the spinning of the prop and other various things that
-	// need to be done in the normal idle callback.
+	/*A função yaw (guinada) foi escrita para contornar um fato do procedimento Glut para a função de utilização do mouse, 
+	a função será chamada por clique ou desclique mas não para enquanto ele for pressionado. 
+	Para compensar este movimento Yaw foi escrita como o retorno de uma chamada ociosa para que enquanto 
+	o botão do mouse é pressionado o avião vai permanece nessa guinada. É por isso que o retorno da chamada ociosa é uma chamada para yaw. 
+	*/
 
 
 
 
 	void yaw(void)
 	{
-		turnspeed = (theta[2] / 10); // sets the speed at which the plane will turn based on how much the plane is banking
-									 // a sharper bank will result in a faster turn
+		turnspeed = (theta[2] / 10); // define a velocidade em que o avião irá virar
 
-		if ((yaw0 == 1) && (planeyaw < 5)){ // actually rotates the plane 5 degrees when yawing in that direction
-			planeyaw++; // provides for a visual yaw so it doesn't look like the world is simply turnong
+		if ((yaw0 == 1) && (planeyaw < 5)){ // faz um giro de 5 graus
+			planeyaw++; 
 		}
-		if ((yaw1 == 1) && (planeyaw > -5)){ // rotates the plane -5 degrees when yawing in the other direction
+		if ((yaw1 == 1) && (planeyaw > -5)){ // faz um giro de -5 graus
 			planeyaw--;
 		}
 
@@ -72,13 +47,9 @@ namespace nsCessna
 		speed = (propvar / 5.0);  // sets the speed of the plane's movement by the propvar which is changed with + and - keys
 
 
-		//  the following large stream of if statements will set the movement of the plane across the ground by
-		//  changing the position forward and sideways (z and x axis) by the rotation that it is experiencing in the y direction
-		//  originally was set to be done with sin and cosin functions because they give the wanted results using the same
-		//  direction degrees and would also have given a more exact direction, but for an unknown reason would send the plane
-		//  to move around in small circles instead of moving forward.  Splitting up the movements into groups of degrees
-		//  does not give it exact movement to the direction the plane is flying, but does give realistic movement
-
+		// O código a seguir irá definit a movimentação perante o plano
+		//alterando a posição nos eixos Z e X. A rotação  na direcção y foi definido para ser feito com funções de seno e cosseno
+		//O movimento foi dividido em grupos de 10 graus para dar um movimento realista
 
 		if ((theta[1] <= 0) && (theta[1] >= -10)){
 			forwardpos += 1 * speed;
@@ -235,23 +206,14 @@ namespace nsCessna
 			forwardpos -= 1 * speed;
 			sidewayspos += 0 * speed;
 		}
-		//end of the plane's movement section
 
-		//the following is the former code that i tried which should have been the equivelent of the previous section
-		//but sent the plane traveling in tiny circles instead, again cause is unknown.
-		//sidewayspos += sin(theta[1]) * speed;
-		//forwardpos += cos(theta[1]) * speed;
 
 		glutPostRedisplay();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-	void stallanimate(){ // usually called when the plane is stalling
-		updownspeed -= 2; // makes the plane lose altitude
-		theta[0] += 4; // quickly makes the plane start to dive
+	void stallanimate(){ // chamado quando o avião para
+		updownspeed -= 2; // faz com que ele perca altitude
+		theta[0] += 4; // e inicie um mergulho
 	}
 
 
