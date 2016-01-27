@@ -1,8 +1,5 @@
 namespace nsCessna
 {
-
-
-
 //cores padrão de um material
 
 	//	glColor3f(0.6,0.1,0.1); cor dos tijolos
@@ -52,23 +49,8 @@ namespace nsCessna
         GLfloat yellowmat_shininess={100.0};
 
 
-// **********************************************************************
-// *                                                                    *
-// **********************************************************************
-
 	// Funções para mudar cores durante a renderização
-// **********************************************************************
-// *                                                                    *
-// **********************************************************************
-
-
-
-// **********************************************************************
-// *                                                                    *
-// **********************************************************************
-
-
-		void yellowmaterial(){
+			void yellowmaterial(){
 			glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, yellowmat_specular);
 			glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, yellowmat_ambient);
 			glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, yellowmat_diffuse);

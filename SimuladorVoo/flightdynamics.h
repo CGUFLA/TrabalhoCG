@@ -1,14 +1,9 @@
 namespace nsCessna
 {
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-	/*A função yaw (guinada) foi escrita para contornar um fato do procedimento Glut para a função de utilização do mouse, 
-	a função será chamada por clique ou desclique mas não para enquanto ele for pressionado. 
-	Para compensar este movimento Yaw foi escrita como o retorno de uma chamada ociosa para que enquanto 
-	o botão do mouse é pressionado o avião vai permanece nessa guinada. É por isso que o retorno da chamada ociosa é uma chamada para yaw. 
+	/*A função yaw (guinada) foi escrita para contornar um fato do procedimento Glut para a função de utilização do mouse,
+	a função será chamada por clique ou desclique mas não para enquanto ele for pressionado.
+	Para compensar este movimento Yaw foi escrita como o retorno de uma chamada ociosa para que enquanto
+	o botão do mouse é pressionado o avião vai permanece nessa guinada. É por isso que o retorno da chamada ociosa é uma chamada para yaw.
 	*/
 
 
@@ -19,32 +14,32 @@ namespace nsCessna
 		turnspeed = (theta[2] / 10); // define a velocidade em que o avião irá virar
 
 		if ((yaw0 == 1) && (planeyaw < 5)){ // faz um giro de 5 graus
-			planeyaw++; 
+			planeyaw++;
 		}
 		if ((yaw1 == 1) && (planeyaw > -5)){ // faz um giro de -5 graus
 			planeyaw--;
 		}
 
-		if ((yaw0 == 0) && (yaw1 == 0) && (planeyaw > 0)){  // rotates the plane back to forward position while
+		if ((yaw0 == 0) && (yaw1 == 0) && (planeyaw > 0)){  // gira o avião de volta para a posição a frente enquanto
 			planeyaw--;
-			theta[1]--;// rotating the rest of the earth
+			theta[1]--;// rotaciona
 		}
-		if ((yaw0 == 0) && (yaw1 == 0) && (planeyaw < 0)){ // rotates the plane back to forward position
+		if ((yaw0 == 0) && (yaw1 == 0) && (planeyaw < 0)){
 			planeyaw++;
-			theta[1]++;// while rotating the rest of the earth
+			theta[1]++;
 		}
 
-		theta[1] = theta[1] + turnspeed; // rotates by the turnspeed
+		theta[1] = theta[1] + turnspeed; // gira de acordo com a velocidade
 
-		if (yaw0 == 1) theta[1] -= 1.0; // if mouse button held, spin
+		if (yaw0 == 1) theta[1] -= 1.0; // se o botão está acionado, rotaciona
 		if (yaw1 == 1) theta[1] += 1.0;
 
-		propspin += propvar;  // spins the prop at a speed that can be changed with + and - keys
-		if (propspin > 360.0) propspin -= 360.0; // if it has exceeded 360 degrees it is then reduced back to 0
-		if (propspin < -360.0) propspin += 360.0; // if it has gone beneath -360 degrees it is then put back to 0
-		if (theta[1] > 180.0) theta[1] -= 360.0; //if maximum spin reached subtract 360 degrees
-		if (theta[1] < -180.0) theta[1] += 360.0; //if minimum spin reached add 360 degrees
-		speed = (propvar / 5.0);  // sets the speed of the plane's movement by the propvar which is changed with + and - keys
+		propspin += propvar;  // a velocidade da helice pode ser mudada por com os botõs + e -
+		if (propspin > 360.0) propspin -= 360.0;
+		if (propspin < -360.0) propspin += 360.0;
+		if (theta[1] > 180.0) theta[1] -= 360.0;
+		if (theta[1] < -180.0) theta[1] += 360.0;
+		speed = (propvar / 5.0);  // define a velocidade do avião pela variável de giro da helice
 
 
 		// O código a seguir irá definit a movimentação perante o plano
@@ -207,7 +202,6 @@ namespace nsCessna
 			sidewayspos += 0 * speed;
 		}
 
-
 		glutPostRedisplay();
 	}
 
@@ -215,10 +209,5 @@ namespace nsCessna
 		updownspeed -= 2; // faz com que ele perca altitude
 		theta[0] += 4; // e inicie um mergulho
 	}
-
-
-
-
-
 }
 
