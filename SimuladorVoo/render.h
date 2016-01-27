@@ -17,16 +17,16 @@ namespace nsCessna
             }
 
             if(pos) {
-                red = red - 8.0;
-                blue = blue - 11.0;
-                green = green - 15.0;
-                color_ambient = color_ambient - 0.01;
+                red -= 8.0;
+                blue -= 11.0;
+                green -= 15.0;
+                color_ambient -= 0.01;
             }
             else {
-                red = red + 8.0;
-                blue = blue + 11.0;
-                green = green + 15.0;
-                color_ambient = color_ambient + 0.01;
+                red+= 8.0;
+                blue += 11.0;
+                green += 15.0;
+                color_ambient += + 0.01;
             }
         }
 
@@ -121,9 +121,19 @@ namespace nsCessna
         //Esta é uma detecção de colisão muito simples com o solo,
         //basicamente, se ele tenta obter uma altitude negativa, então ele simplesmente permanece em zero,
         //o plano se torna nível.
-        if (elevation < 0){ // se o avião tenta penetrar o chão
+
+        if (elevation <= 0){ // se o avião tenta penetrar o chão
             elevation = 0;// ele irá retornar para o nível 0
             updownspeed = 0; // ele não terá variação de velocidade
+            printf("%.2f\n", propvar);
+            if(propvar >= 0) {
+                theta[0] -= 0.2;
+                propvar -= 0.2;
+            }
+            if(propvar < 0) {
+                theta[1] = -90.00;
+                propvar = 0;
+            }
             theta[0] = 0;
         }
 
@@ -145,6 +155,7 @@ namespace nsCessna
             if (theta[0] > 90) theta[0] = 90; // irá ser atraído para o chão
         }
 
+        //se esta dentro do aviao
         if (insidecamera == 1){ // ajustar a camera para o movimento do avião
         glRotatef(theta[0], -1.0, 0.0, 0.0); // chamadas de funções de rotação
         glRotatef(planeyaw, 0.0, 1.0, 0.0);
@@ -160,7 +171,8 @@ namespace nsCessna
         glLoadIdentity();
 
         gluLookAt(eyex, eyey, eyez, atx, aty, atz, upx, upy, upz); // seta configurações da camera para a nova identidade
-        if (insidecamera == 0){
+
+        if (insidecamera == 0) {
             glRotatef(theta[0], 1.0, 0.0, 0.0); // Chamadas de rotação
             glRotatef(planeyaw, 0.0, 1.0, 0.0);
             glRotatef(theta[2], 0.0, 0.0, 1.0);
@@ -196,12 +208,8 @@ namespace nsCessna
         glMatrixMode(GL_MODELVIEW);
     }
 
-    // **********************************************************************
-    // *                                                                    *
-    // **********************************************************************
 
     //funções para desenhar o solo e todos os edificios
-
 
 
     void drawgroundandbuildings()
@@ -229,13 +237,8 @@ namespace nsCessna
         glPushMatrix();
     }
 
-    // **********************************************************************
-    // *                                                                    *
-    // **********************************************************************
 
     // chamada hierarquica para desenhar o avião e a rotação das hélices
-
-
 
     void drawairplane()
     {
@@ -268,9 +271,6 @@ namespace nsCessna
     {
         GLfloat env_color[4], border_color[4];
 
-        //cell_vector(env_color, ecolor, 4);
-        //cell_vector(border_color, bcolor, 4);
-
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -293,9 +293,6 @@ namespace nsCessna
     {
         GLfloat env_color[4], border_color[4];
 
-        //cell_vector(env_color, ecolor, 4);
-        //cell_vector(border_color, bcolor, 4);
-
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -304,13 +301,6 @@ namespace nsCessna
         glTexEnvfv(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, env_color);
         glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border_color);
     }
-
-    // **********************************************************************
-    // *                                                                    *
-    // **********************************************************************
-
-
-
 
     void texture(void)
     {
