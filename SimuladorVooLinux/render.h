@@ -5,24 +5,29 @@ namespace nsCessna
 
 	void display(void) // Funcao display, chama todas as luzes e funcoes de desenho na tela
 	{
-        cont ++;
-        if(cont % 10) {
-            if(ambiente > 2.20){
+        time_t t = time(0);   // get time now
+        struct tm * now = localtime( & t );
+
+        if(now->tm_sec % 5 == 0) {
+            if(ambiente > 1.70){
                 pos = 1;
             }
-            if(ambiente < 0.00){
+            if(ambiente < -1){
                 pos = 0;
             }
 
             if(pos) {
-                red = red - 5.0;
+                red = red - 8.0;
+                blue = blue - 11.0;
+                green = green - 15.0;
                 ambiente = ambiente - 0.01;
             }
             else {
-                red = red + 5.0;
+                red = red + 8.0;
+                blue = blue + 11.0;
+                green = green + 15.0;
                 ambiente = ambiente + 0.01;
             }
-            printf("%.2f %d %d\n", ambiente, cont, pos);
         }
 
 

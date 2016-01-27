@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include <GL/glut.h>
+#include <ctime>
+#include <iostream>
 
 #define windowWidth  576
 #define windowHeight 384
@@ -38,7 +40,6 @@ namespace nsCessna
 			upy = 1.0;
 			upz = 0.0;
 
-            cont = 0;
             ambiente = 0.0;
             pos = 0;
             red = 51.0;
