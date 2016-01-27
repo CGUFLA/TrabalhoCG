@@ -1,8 +1,5 @@
 namespace nsCessna
 {
-
-	// array de caracteres para soletrar "Press Spacebar to Continue"
-	char spacebar[26] = {'P','r','e','s','s',' ','S','p','a','c','e','b','a','r',' ','t','o',' ','C','o','n','t','i','n','u','e'};
 	int j = 0;
 	static GLfloat theta[] = {0.0,-90.0,0.0};//para rotação
 	static GLfloat turnspeed = 0.0; // velocidade de rotação
@@ -18,8 +15,6 @@ namespace nsCessna
 	float sidewayspos = 0; // posição no eixo X em que o avião começa em relação ao chão
 	int stalling = 0;
 
-	GLfloat splash[][2] = {{0,0},{0,300},{300,300},{300,0}};
-
 	int mainwindow, splashscreen, rx, ry, i; // variaveis para o dimensionamento e redimensionamento da janela
 	float eyex, eyey, eyez, atx, aty, atz, upx, upy, upz; // variaveis para a camera com a função glLookAt
 	int floatcamera = 0;
@@ -32,8 +27,12 @@ namespace nsCessna
 	unsigned char* image = NULL;
 	int iheight, iwidth;
 
+    // variaveis para o controle das cores da iluminacao
+    float color_ambient;
+    int pos;
+    float red, blue, green;
 
-
+    //funcao que imprime os valores do aviao no terminal
 	void gotoxy(int x, int y)
 	{
 		COORD coord;

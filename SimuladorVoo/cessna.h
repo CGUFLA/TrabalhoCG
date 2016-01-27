@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include <GL/glut.h>
+#include <ctime>
+#include <iostream>
 
 #define windowWidth  776
 #define windowHeight 584

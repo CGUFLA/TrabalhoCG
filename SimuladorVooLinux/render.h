@@ -9,10 +9,10 @@ namespace nsCessna
         struct tm * now = localtime( & t );
 
         if(now->tm_sec % 5 == 0) {
-            if(ambiente > 1.70){
+            if(color_ambient > 1.70){
                 pos = 1;
             }
-            if(ambiente < -1){
+            if(color_ambient < -1){
                 pos = 0;
             }
 
@@ -20,13 +20,13 @@ namespace nsCessna
                 red = red - 8.0;
                 blue = blue - 11.0;
                 green = green - 15.0;
-                ambiente = ambiente - 0.01;
+                color_ambient = color_ambient - 0.01;
             }
             else {
                 red = red + 8.0;
                 blue = blue + 11.0;
                 green = green + 15.0;
-                ambiente = ambiente + 0.01;
+                color_ambient = color_ambient + 0.01;
             }
         }
 
@@ -38,7 +38,7 @@ namespace nsCessna
 		GLfloat mat_shininess={32.0};
 
 		// as seguintes configurações são para a iluminação, apenas os dois primeiros estão sendo utilizados
-		GLfloat light_ambient[]={ambiente, ambiente, ambiente, 0.0};
+		GLfloat light_ambient[]={color_ambient, color_ambient, color_ambient, 0.0};
 		GLfloat light_diffuse[]={1.0, 1.0, 1.0, 1.0};
         GLfloat light_specular[]={0.0, 0.0, 0.0, 1.0};
 
@@ -47,14 +47,6 @@ namespace nsCessna
 		GLfloat light_ambient1[]={0.1 , 0.1, 0.1, 1.0};
 		GLfloat light_diffuse1[]={1.0, 1.0, 1.0, 1.0};
 		GLfloat light_specular1[]={1.0, 1.0, 1.0, 1.0};
-
-		GLfloat light_ambient2[]={0.1, 0.1, 0.1, 1.0};
-		GLfloat light_diffuse2[]={1.0, 1.0, 1.0, 1.0};
-		GLfloat light_specular2[]={1.0, 1.0, 1.0, 1.0};
-
-		GLfloat light_ambient3[]={0.1, 0.1, 0.1, 1.0};
-		GLfloat light_diffuse3[]={1.0, 1.0, 1.0, 1.0};
-		GLfloat light_specular3[]={1.0, 1.0, 1.0, 1.0};
 
 		//define as variáveis de iluminação para as funções glLight
 		//glLightfv(GL_LIGHT0, GL_POSITION, light_position);
@@ -66,16 +58,6 @@ namespace nsCessna
 		glLightfv(GL_LIGHT1, GL_AMBIENT, light_ambient1);
 		glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse1);
 		glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular1);
-
-		//glLightfv(GL_LIGHT2, GL_POSITION, light_position2);
-		glLightfv(GL_LIGHT2, GL_AMBIENT, light_ambient2);
-		glLightfv(GL_LIGHT2, GL_DIFFUSE, light_diffuse2);
-		glLightfv(GL_LIGHT2, GL_SPECULAR, light_specular2);
-
-		//glLightfv(GL_LIGHT3, GL_POSITION, light_position3);
-		glLightfv(GL_LIGHT3, GL_AMBIENT, light_ambient3);
-		glLightfv(GL_LIGHT3, GL_DIFFUSE, light_diffuse3);
-		glLightfv(GL_LIGHT3, GL_SPECULAR, light_specular3);
 
 		//inicia os padrões para os materiais
 		glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, mat_specular);
@@ -90,10 +72,7 @@ namespace nsCessna
 		glShadeModel(GL_SMOOTH);
 		glEnable(GL_LIGHTING);
 		glEnable(GL_LIGHT0);
-		//glEnable(GL_LIGHT1);
-		//luzes 2 e 3 foram retiradas pq o mundo parece mais real sem elas
-		//glEnable(GL_LIGHT2);
-		//glEnable(GL_LIGHT3);
+		glEnable(GL_LIGHT1);
 
 		//glDepthFunc(GL_LEQUAL);
 		//permite teste de profundidade para esconder o que há atras dos objetos
@@ -181,7 +160,8 @@ namespace nsCessna
 		glLoadIdentity();
 
 		gluLookAt(eyex, eyey, eyez, atx, aty, atz, upx, upy, upz); // seta configurações da camera para a nova identidade
-		if (insidecamera == 0){
+
+        if (insidecamera == 0) {
     		glRotatef(theta[0], 1.0, 0.0, 0.0); // Chamadas de rotação
     		glRotatef(planeyaw, 0.0, 1.0, 0.0);
     		glRotatef(theta[2], 0.0, 0.0, 1.0);
@@ -195,25 +175,18 @@ namespace nsCessna
 
 		gotoxy(1,5 );printf("Inclinacao do Aviao %.02f",theta[2]);
 
-		//gotoxy(1 ,4 );printf("yaw0 %.02f",yaw0);
-		//gotoxy(21,4 );printf("yaw1 %.02f",yaw1);
-		//gotoxy(1,4 );printf("planeyaw %.02f",planeyaw);
-
 		gotoxy(32,5 );printf("Velocidade Inclinacao %.02f",turnspeed);
 
 		gotoxy(1 ,7 );printf("Angulo da Helice %.02f",propspin);
 		gotoxy(32,7 );printf("Velocidade da Helice %.02f",propvar);
 		gotoxy(1 ,9 );printf("Elevacao %.02f",elevation);
-		//gotoxy(32,9 );printf("Velocidade de Subida/Descida %.02f",updownspeed);
+
 		gotoxy(1 ,11 );printf("Velocidade do Aviao %.02f",speed);
 
         gotoxy(1 ,16 );printf("Velocidade Minima para Decolar: 12.40");gotoxy(1 ,21);
 	//#endif
 
 	}
-
-
-
 
 	void myReshape(int w, int h)
 	{
@@ -224,12 +197,8 @@ namespace nsCessna
 		glMatrixMode(GL_MODELVIEW);
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 	//funções para desenhar o solo e todos os edificios
-
 
 
 	void drawgroundandbuildings()
@@ -257,13 +226,8 @@ namespace nsCessna
 		glPushMatrix();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 	// chamada hierarquica para desenhar o avião e a rotação das hélices
-
-
 
 	void drawairplane()
 	{
@@ -292,13 +256,9 @@ namespace nsCessna
 	}
 
 
-	void
-	wingtexenv(void)
+	void wingtexenv(void)
 	{
 		GLfloat env_color[4], border_color[4];
-
-		//cell_vector(env_color, ecolor, 4);
-		//cell_vector(border_color, bcolor, 4);
 
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -311,8 +271,7 @@ namespace nsCessna
 
 
 
-	void
-	wingtexture(void)
+	void wingtexture(void)
 	{
 		wingtexenv();
 		gluBuild2DMipmaps(GL_TEXTURE_2D, 3, iwidth, iheight, GL_RGB, GL_UNSIGNED_BYTE, image);
@@ -323,9 +282,6 @@ namespace nsCessna
 	{
 		GLfloat env_color[4], border_color[4];
 
-		//cell_vector(env_color, ecolor, 4);
-		//cell_vector(border_color, bcolor, 4);
-
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -334,13 +290,6 @@ namespace nsCessna
 		glTexEnvfv(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, env_color);
 		glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border_color);
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-
-
 
 	void texture(void)
 	{

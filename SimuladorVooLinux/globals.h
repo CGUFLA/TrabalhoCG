@@ -1,75 +1,43 @@
-
-// *********************************************************************
-// *     This software is made available only to individuals and only  *
-// *     for educational purposes. Any and all commercial use is       *
-// *     stricly prohibited.                                           *
-// *********************************************************************
-//**********************************************************************
-//* Disclaimer: Any borrowed code used in this                         *
-//*             program is the property of the                         *
-//*             code originator. credit to them.                       *
-//*                                                                    *
-//*                                                                    *
-//*   Unfinished                                                       *
-//*   WARNING:                                                         *
-//*                                                                    *
-//*                                                                    *
-//*                                                                    *
-//**********************************************************************
-// *********************************************************************
-// *                                                                   *
-// *********************************************************************
-
 namespace nsCessna
 {
 
-	// spacebar is array of characters to spell out "Press Spacebar to Continue"
-	char spacebar[26] = {'P','r','e','s','s',' ','S','p','a','c','e','b','a','r',' ','t','o',' ','C','o','n','t','i','n','u','e'};
-	int j = 0; // to increment through spelling
-	static GLfloat theta[] = {0.0,-90.0,0.0};//for spin
-	static GLfloat turnspeed = 0.0; // variable for the speed at which the plane will turn
-	static GLfloat yaw0 = 0;//for yaw, so mouse can be held down
-	static GLfloat yaw1 = 0;
-	static GLfloat planeyaw = 0; // gives the angle of the yaw of the plane
+    int j = 0;
+    static GLfloat theta[] = {0.0,-90.0,0.0};//para rotação
+    static GLfloat turnspeed = 0.0; // velocidade de rotação
+    static GLfloat yaw0 = 0;//para dar uma guinada o mouse deve ser pressionado, ou os botões de controle
+    static GLfloat yaw1 = 0;
+    static GLfloat planeyaw = 0; // anglo da guinada
 
-	static GLfloat propvar=0; // the speed of the propellor
-	static GLfloat elevation = 0; // the height of the plane in repsect to the ground
-	static GLfloat updownspeed = 0; // the speed at which the height will change
-	static GLfloat speed = 0; // the speed at which the plane will move
-	float forwardpos = -350; // the position in the y axis that the plane starts at with respect to the ground
-	float sidewayspos = 0; // the position in the x axis that the plane starts at with respect to the ground
-	int stalling = 0; // flag for if the plane is in a stall or not
+    static GLfloat propvar=0; // velocidade da helice
+    static GLfloat elevation = 0; // altura do avião em relação ao chão
+    static GLfloat updownspeed = 0; // velocidade a que a altura vai alterar
+    static GLfloat speed = 0; // velocidade de movimento do plano
+    float forwardpos = -350; // posição no eixo y em que o avião começa em relação ao chão
+    float sidewayspos = 0; // posição no eixo X em que o avião começa em relação ao chão
+    int stalling = 0;
 
-	GLfloat splash[][2] = {{0,0},{0,300},{300,300},{300,0}};
+    int mainwindow, splashscreen, rx, ry, i; // variaveis para o dimensionamento e redimensionamento da janela
+    float eyex, eyey, eyez, atx, aty, atz, upx, upy, upz; // variaveis para a camera com a função glLookAt
+    int floatcamera = 0;
+    int insidecamera = 0;
+    int bowlerpoles;
+    int bowlersteps;
 
-	int mainwindow, splashscreen, rx, ry, i; // variables for the window sizes for resizing
-	float eyex, eyey, eyez, atx, aty, atz, upx, upy, upz; // variables for the camera with the glLookAt function
-	int floatcamera = 0; // flags to know if in the floating camera
-	int insidecamera = 0; // or inside the plane mode
-	int bowlerpoles; // variable for spacing and counting the poles on the porch of Bowler
-	int bowlersteps; // variable for spacing and counting of steps up to Bowler
-	// variables needed for Nate Robins Code for texture mapping ppm files.  See below
-	GLint offset = 0;  // counter for placement of the different pillars
-	static GLfloat propspin = 0; // gives the angle that the propellor is at
-	unsigned char* image = NULL;
-	int iheight, iwidth;
-    int cont;
-    float ambiente;
+    GLint offset = 0;  // contador para o posicionamento de pilares das casas
+    static GLfloat propspin = 0; // angulo de propulsão da helice
+    unsigned char* image = NULL;
+    int iheight, iwidth;
+
+    // variaveis para o controle das cores da iluminacao
+    float color_ambient;
     int pos;
     float red, blue, green;
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-
-	void gotoxy(int x, int y)
+    //funcao que imprime os valores do aviao no terminal
+    void gotoxy(int x, int y)
     {
  -      printf("\033[%d;%dH", y+1, x+1);
-		return;
-	}
-
-
-
+        return;
+    }
 
 }

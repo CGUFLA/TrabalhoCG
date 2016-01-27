@@ -40,8 +40,7 @@ namespace nsCessna
 			upy = 1.0;
 			upz = 0.0;
 
-            ambiente = 0.0;
-            pos = 0;
+            color_ambient = 0.0;
             red = 51.0;
             blue = 189.0;
             green = 255.0;
