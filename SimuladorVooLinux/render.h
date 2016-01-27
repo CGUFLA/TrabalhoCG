@@ -5,6 +5,26 @@ namespace nsCessna
 
 	void display(void) // Funcao display, chama todas as luzes e funcoes de desenho na tela
 	{
+        cont ++;
+        if(cont % 10) {
+            if(ambiente > 2.20){
+                pos = 1;
+            }
+            if(ambiente < 0.00){
+                pos = 0;
+            }
+
+            if(pos) {
+                red = red - 5.0;
+                ambiente = ambiente - 0.01;
+            }
+            else {
+                red = red + 5.0;
+                ambiente = ambiente + 0.01;
+            }
+            printf("%.2f %d %d\n", ambiente, cont, pos);
+        }
+
 
 		//valores padrão dos materiais
 		GLfloat mat_specular[]={0.0, 0.0, 0.0, 1.0};
@@ -13,12 +33,13 @@ namespace nsCessna
 		GLfloat mat_shininess={32.0};
 
 		// as seguintes configurações são para a iluminação, apenas os dois primeiros estão sendo utilizados
-		GLfloat light_ambient[]={0.1, 0.1, 0.1, 1.0};
+		GLfloat light_ambient[]={ambiente, ambiente, ambiente, 0.0};
 		GLfloat light_diffuse[]={1.0, 1.0, 1.0, 1.0};
-		GLfloat light_specular[]={1.0, 1.0, 1.0, 1.0};
-		GLfloat global_ambient[]={0.2, 0.2, 0.2, 1.0};
+        GLfloat light_specular[]={0.0, 0.0, 0.0, 1.0};
 
-		GLfloat light_ambient1[]={0.1, 0.1, 0.1, 1.0};
+		GLfloat global_ambient[]={0.0, 0.0, 0.0, 0.0};
+
+		GLfloat light_ambient1[]={0.1 , 0.1, 0.1, 1.0};
 		GLfloat light_diffuse1[]={1.0, 1.0, 1.0, 1.0};
 		GLfloat light_specular1[]={1.0, 1.0, 1.0, 1.0};
 
@@ -64,7 +85,7 @@ namespace nsCessna
 		glShadeModel(GL_SMOOTH);
 		glEnable(GL_LIGHTING);
 		glEnable(GL_LIGHT0);
-		glEnable(GL_LIGHT1);
+		//glEnable(GL_LIGHT1);
 		//luzes 2 e 3 foram retiradas pq o mundo parece mais real sem elas
 		//glEnable(GL_LIGHT2);
 		//glEnable(GL_LIGHT3);
@@ -74,7 +95,7 @@ namespace nsCessna
 		glEnable(GL_DEPTH_TEST);
 
 		//define luz azul para o céu
-		glClearColor(51.0/255.0,189.0/255.0,255.0/255.0,1.0);
+		glClearColor(red/255.0,blue/255.0,green/255.0,1.0);
 		//limpa os buffers para o próximo desenho
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 

@@ -53,7 +53,10 @@ namespace nsCessna
 	static GLfloat propspin = 0; // gives the angle that the propellor is at
 	unsigned char* image = NULL;
 	int iheight, iwidth;
-
+    int cont;
+    float ambiente;
+    int pos;
+    float red, blue, green;
 
 	// **********************************************************************
 	// *                                                                    *
@@ -61,10 +64,8 @@ namespace nsCessna
 
 
 	void gotoxy(int x, int y)
-	{
-		COORD coord;
-		coord.X = x; coord.Y = y;
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+    {
+ -      printf("\033[%d;%dH", y+1, x+1);
 		return;
 	}
 

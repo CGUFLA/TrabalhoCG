@@ -38,6 +38,13 @@ namespace nsCessna
 			upy = 1.0;
 			upz = 0.0;
 
+            cont = 0;
+            ambiente = 0.0;
+            pos = 0;
+            red = 51.0;
+            blue = 189.0;
+            green = 255.0;
+
 			glEnable(GL_DEPTH_TEST); // ativa o depth test que gerencia o z-buffer, um gerenciador de profundidade para evitar sobreposições
 
 			glutPositionWindow(384,476); //Posiciona a janela no centro da tela
