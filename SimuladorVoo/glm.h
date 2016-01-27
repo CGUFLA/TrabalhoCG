@@ -1,152 +1,89 @@
-
-// *********************************************************************
-// *     This software is made available only to individuals and only  *
-// *     for educational purposes. Any and all commercial use is       *
-// *     stricly prohibited.                                           *
-// *********************************************************************
-//**********************************************************************
-//* Disclaimer: Any borrowed code used in this                         *
-//*             program is the property of the                         *
-//*             code originator. credit to them.                       *
-//*                                                                    *
-//*                                                                    *
-//*   Unfinished                                                       *
-//*   WARNING:                                                         *
-//*                                                                    *
-//*                                                                    *
-//*                                                                    *
-//**********************************************************************
-
-/*
-      glm.h
-      Nate Robins, 1997, 2000
-      nate@pobox.com, http://www.pobox.com/~nate
-
-      Wavefront OBJ model file format reader/writer/manipulator.
-
-      Includes routines for generating smooth normals with
-      preservation of edges, welding redundant vertices & texture
-      coordinate generation (spheremap and planar projections) + more.
-
- */
-
-
 #ifndef M_PI
 #define M_PI 3.14159265f
 #endif
 
-#define GLM_NONE     (0)            /* render with only vertices */
-#define GLM_FLAT     (1 << 0)       /* render with facet normals */
-#define GLM_SMOOTH   (1 << 1)       /* render with vertex normals */
-#define GLM_TEXTURE  (1 << 2)       /* render with texture coords */
-#define GLM_COLOR    (1 << 3)       /* render with colors */
-#define GLM_MATERIAL (1 << 4)       /* render with materials */
+#define GLM_NONE     (0)            /* apenas vértices */
+#define GLM_FLAT     (1 << 0)       /* renderiza com as faces normaos */
+#define GLM_SMOOTH   (1 << 1)       /* renderiza com vertices normais */
+#define GLM_TEXTURE  (1 << 2)       /* renderiza com textura */
+#define GLM_COLOR    (1 << 3)       /* renderiza com cores */
+#define GLM_MATERIAL (1 << 4)       /* renderiza com materiais */
 
 
-/* GLMmaterial: Structure that defines a material in a model.
- */
 typedef struct _GLMmaterial
 {
-  char* name;                   /* name of material */
-  GLfloat diffuse[4];           /* diffuse component */
-  GLfloat ambient[4];           /* ambient component */
-  GLfloat specular[4];          /* specular component */
-  GLfloat emmissive[4];         /* emmissive component */
-  GLfloat shininess;            /* specular exponent */
+  char* name;                   /* nome do material */
+  GLfloat diffuse[4];           /* componente difuso */
+  GLfloat ambient[4];           /* componente ambiente */
+  GLfloat specular[4];          /* componente especular */
+  GLfloat emmissive[4];         /* componente emissivo */
+  GLfloat shininess;
 } GLMmaterial;
 
-/* GLMtriangle: Structure that defines a triangle in a model.
+/* GLMtriangle: estrutura que define um triangulo
  */
 typedef struct _GLMtriangle {
-  GLuint vindices[3];           /* array of triangle vertex indices */
-  GLuint nindices[3];           /* array of triangle normal indices */
-  GLuint tindices[3];           /* array of triangle texcoord indices*/
-  GLuint findex;                /* index of triangle facet normal */
+  GLuint vindices[3];           /* array indices dos vertices do triangulo */
+  GLuint nindices[3];           /* array de indices das normais */
+  GLuint tindices[3];           /* array de indices das texturas*/
+  GLuint findex;                /* index da normal */
 } GLMtriangle;
 
-/* GLMgroup: Structure that defines a group in a model.
- */
+
 typedef struct _GLMgroup {
-  char*             name;           /* name of this group */
-  GLuint            numtriangles;   /* number of triangles in this group */
-  GLuint*           triangles;      /* array of triangle indices */
-  GLuint            material;       /* index to material for group */
-  struct _GLMgroup* next;           /* pointer to next group in model */
+  char*             name;
+  GLuint            numtriangles;
+  GLuint*           triangles;
+  GLuint            material;
+  struct _GLMgroup* next;
 } GLMgroup;
 
-/* GLMmodel: Structure that defines a model.
+/* GLMmodel: estrutura que define um modelo
  */
 typedef struct _GLMmodel {
-  char*    pathname;            /* path to this model */
-  char*    mtllibname;          /* name of the material library */
+  char*    pathname;            /* caminho para esse modelo */
+  char*    mtllibname;          /* nome da biblioteca do material */
 
-  GLuint   numvertices;         /* number of vertices in model */
-  GLfloat* vertices;            /* array of vertices  */
+  GLuint   numvertices;         /* numero de vertices do modelo */
+  GLfloat* vertices;            /* array de vertices  */
 
-  GLuint   numnormals;          /* number of normals in model */
-  GLfloat* normals;             /* array of normals */
+  GLuint   numnormals;          /* numero de normais */
+  GLfloat* normals;             /* array de normais */
 
-  GLuint   numtexcoords;        /* number of texcoords in model */
-  GLfloat* texcoords;           /* array of texture coordinates */
+  GLuint   numtexcoords;
+  GLfloat* texcoords;
 
-  GLuint   numfacetnorms;       /* number of facetnorms in model */
-  GLfloat* facetnorms;          /* array of facetnorms */
+  GLuint   numfacetnorms;
+  GLfloat* facetnorms;
 
-  GLuint       numtriangles;    /* number of triangles in model */
-  GLMtriangle* triangles;       /* array of triangles */
+  GLuint       numtriangles;    /* numero de triangulos */
+  GLMtriangle* triangles;       /* array de triangulos */
 
-  GLuint       nummaterials;    /* number of materials in model */
-  GLMmaterial* materials;       /* array of materials */
+  GLuint       nummaterials;    /* numero de materiais */
+  GLMmaterial* materials;       /* array de materiais */
 
-  GLuint       numgroups;       /* number of groups in model */
-  GLMgroup*    groups;          /* linked list of groups */
+  GLuint       numgroups;       /* numero de grupos no modelo */
+  GLMgroup*    groups;
 
-  GLfloat position[3];          /* position of the model */
+  GLfloat position[3];          /* posição do modelo */
 
 } GLMmodel;
 
 
-/* glmUnitize: "unitize" a model by translating it to the origin and
- * scaling it to fit in a unit cube around the origin.  Returns the
- * scalefactor used.
- *
- * model - properly initialized GLMmodel structure
+/* glmUnitize: unifica o modelo redimensionando-o
  */
 GLfloat
 glmUnitize(GLMmodel* model);
 
-/* glmDimensions: Calculates the dimensions (width, height, depth) of
- * a model.
- *
- * model      - initialized GLMmodel structure
- * dimensions - array of 3 GLfloats (GLfloat dimensions[3])
- */
 GLvoid
 glmDimensions(GLMmodel* model, GLfloat* dimensions);
-
-/* glmScale: Scales a model by a given amount.
- *
- * model - properly initialized GLMmodel structure
- * scale - scalefactor (0.5 = half as large, 2.0 = twice as large)
- */
 GLvoid
 glmScale(GLMmodel* model, GLfloat scale);
 
-/* glmReverseWinding: Reverse the polygon winding for all polygons in
- * this model.  Default winding is counter-clockwise.  Also changes
- * the direction of the normals.
- *
- * model - properly initialized GLMmodel structure
- */
+/* glmReverseWinding: reverte todos os polígonos deste modelo*/
 GLvoid
 glmReverseWinding(GLMmodel* model);
 
-/* glmFacetNormals: Generates facet normals for a model (by taking the
- * cross product of the two vectors derived from the sides of each
- * triangle).  Assumes a counter-clockwise winding.
- *
- * model - initialized GLMmodel structure
- */
 GLvoid
 glmFacetNormals(GLMmodel* model);
 

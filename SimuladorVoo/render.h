@@ -187,8 +187,6 @@ namespace nsCessna
 	}
 
 
-
-
 	void myReshape(int w, int h)
 	{
 		glMatrixMode(GL_PROJECTION);
@@ -198,14 +196,9 @@ namespace nsCessna
 		glMatrixMode(GL_MODELVIEW);
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
+
 
 	//funções para desenhar o solo e todos os edificios
-
-
-
 	void drawgroundandbuildings()
 	{
 		drawground();
@@ -231,14 +224,9 @@ namespace nsCessna
 		glPushMatrix();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
+
 
 	// chamada hierarquica para desenhar o avião e a rotação das hélices
-
-
-
 	void drawairplane()
 	{
 		bluematerial(); //seta cor para azul
@@ -308,13 +296,6 @@ namespace nsCessna
 		glTexEnvfv(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, env_color);
 		glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border_color);
 	}
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-
-
 
 	void texture(void)
 	{

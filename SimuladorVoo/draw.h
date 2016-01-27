@@ -187,7 +187,7 @@ namespace nsCessna
 		glEnd();
 	}
 
-	
+
     // Funcao que desenha as Asas traseiras do aviao
 	void drawtailwings()
 	{
@@ -426,7 +426,7 @@ namespace nsCessna
 	void drawGerstackerRoof(){ // função para criar os telhados com a característica gerstacker
 		int roofsteps; // para incrementar os passos até o telhado
 		roofmaterial();
-		for (roofsteps = 0; roofsteps < 101; roofsteps++){ 
+		for (roofsteps = 0; roofsteps < 101; roofsteps++){
 			glPushMatrix();
     			glTranslatef(0, 1202.5 + 5 * roofsteps, 0);
     			glScalef(1450 - 14.5 * roofsteps, 5, 1200 - 5 * roofsteps); // altera o tamanho para ser menor quanto maior for
@@ -481,7 +481,7 @@ namespace nsCessna
     		glPushMatrix();
         		glTranslatef(0, 0, 0);
         		glScalef(1, 1, 4.6);
-        		drawGerstackerRoof(); 
+        		drawGerstackerRoof();
     		glPopMatrix();
 		glPopMatrix();
 	}
@@ -610,7 +610,7 @@ namespace nsCessna
 
 
 	void drawColtonSteps(){ // Função desenha escadas de um dos prédios
-		int stepsteps; 
+		int stepsteps;
 		for (stepsteps = 0; stepsteps < 25; stepsteps++){ // criar 25 degraus
 			glPushMatrix();
     			glTranslatef(1000, 5 + 10 * stepsteps, -800 + 10 * stepsteps); // posiciona o degrau no local correto
@@ -657,11 +657,11 @@ namespace nsCessna
         		glutSolidCube(1.0);
     		glPopMatrix();
 
-    		drawColtonSteps(); 
+    		drawColtonSteps();
 		glPopMatrix();
 	}
 
-/*Verificar o que as próximas funções fazem*/
+
 	void drawGerstacker(){
 		glPushMatrix();
     		glTranslatef(9000, -80, -16000);
@@ -748,39 +748,31 @@ namespace nsCessna
 	}
 
 
-	void drawBatesRoof(){ // function for drawing type of roof that bates features
-		int roofsteps; // for incrementing the steps up the roof goes
+	void drawBatesRoof(){ // função para desenhar telhados
+		int roofsteps;
 		roofmaterial();
-		for (roofsteps = 0; roofsteps < 101; roofsteps++){ // for loop that increments the roofstep count
+		for (roofsteps = 0; roofsteps < 101; roofsteps++){
 			glPushMatrix();
-    			glTranslatef(0, 1202.5 + 5 * roofsteps, 0); // places in the middle and goes up by 5 for each step up
-    			glScalef(4000 - 10 * roofsteps, 5, 4000 - 10 * roofsteps); // changes the size to be smaller the higher the step
-    			glutSolidCube(1.0); // creates the steps of the roof
+    			glTranslatef(0, 1202.5 + 5 * roofsteps, 0);
+    			glScalef(4000 - 10 * roofsteps, 5, 4000 - 10 * roofsteps);
+    			glutSolidCube(1.0);
 			glPopMatrix();
 		}
 		redmaterial();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
-
-
-	void drawBatesSteps(){ // function will draw the large stairs up to the Bates building
-		int stepsteps; // variable to increment the steps
-		for (stepsteps = 0; stepsteps < 25; stepsteps++){ // for loop to create 25 stairs
+	void drawBatesSteps(){ // desenha escadas de um dos prédios
+		int stepsteps;
+		for (stepsteps = 0; stepsteps < 25; stepsteps++){ // loop para desenhar 25 escadas
 			glPushMatrix();
-    			glTranslatef(-300 + 20 * stepsteps, 5 + 10 * stepsteps, 0); // puts the step into correct position
-    			glScalef(600 - 20 * stepsteps, 10, 2000 - 20 * stepsteps); // sizes the stairs
-    			glutSolidCube(1.0); // creates the step
+    			glTranslatef(-300 + 20 * stepsteps, 5 + 10 * stepsteps, 0); // coloca os degraus na posição correta
+    			glScalef(600 - 20 * stepsteps, 10, 2000 - 20 * stepsteps); // dimensiona corretamente as escadas
+    			glutSolidCube(1.0); // cria os degraus
 			glPopMatrix();
 		}
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 	void drawBates(){
 		glPushMatrix();
@@ -808,9 +800,6 @@ namespace nsCessna
 		glPopMatrix();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
 
 
 	void drawLibrary(){
@@ -833,17 +822,7 @@ namespace nsCessna
 		glPopMatrix();
 	}
 
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
 	// Desenho das estradas
-
-	// **********************************************************************
-	// *                                                                    *
-	// **********************************************************************
-
-
 
 	void drawStreets(){
 		glPushMatrix();

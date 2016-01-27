@@ -19,9 +19,6 @@
 
 namespace nsCessna
 {
-
-
-
 	void initSim(void) //inicia simulador
 	{
 
@@ -52,13 +49,10 @@ namespace nsCessna
 			glutIdleFunc(yaw); // função que irá ser usada quando o sistema estiver ocioso
 			glEnable(GL_DEPTH_TEST);
 			glEnable(GL_NORMALIZE); //para evitar comportamentos erroneos da luminosidade, a função ativa a normalização dos vetores
-
-
 	}
 
 	void runSim(void)
 	{
 		glutMainLoop(); // faz um loop no sistema para ficar redesenhando sempre até o sistema ser fechado
 	}
-
 }
